@@ -1,0 +1,48 @@
+{
+  "name": "unmatched-ego-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@next/mdx": "^14.2.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lite-youtube-embed": "^0.3.2",
+    "lucide-react": "^0.378.0",
+    "next": "^14.2.0",
+    "next-mdx-remote": "^4.4.1",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-social-media-embed": "^2.5.13",
+    "react-twitter-embed": "^4.0.4",
+    "sharp": "^0.34.3",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0",
+    "postcss": "^8.4.0",
+    "prettier": "^3.2.0",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

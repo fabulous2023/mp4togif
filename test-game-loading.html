@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Game Loading Optimization</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: bold;
+            padding: 16px 32px;
+            border-radius: 50px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Game Loading Optimization Test</h1>
+        <p>This test demonstrates the improved game loading experience that eliminates blank pages and provides better user feedback.</p>
+        
+        <button id="optimizedBtn" class="btn">
+            <span id="btnIcon">🚀</span>
+            <span id="btnText">Play with Optimization</span>
+        </button>
+        
+        <button id="oldBtn" class="btn">
+            <span>⚠️</span>
+            <span>Old Method (Blank Page)</span>
+        </button>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px; text-align: left;">
+            <h3 style="margin-top: 0; color: #333;">✅ Optimizations Applied:</h3>
+            <ul style="color: #666; line-height: 1.8;">
+                <li><strong>Loading State:</strong> Button shows spinner and "Loading Game..." text</li>
+                <li><strong>Pre-loading Page:</strong> Creates branded loading page before redirect</li>
+                <li><strong>Smooth Transition:</strong> 1-second delay with loading animation</li>
+                <li><strong>Better UX:</strong> No blank white page, consistent branding</li>
+                <li><strong>SEO Friendly:</strong> Proper meta tags and loading states</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const optimizedBtn = document.getElementById('optimizedBtn');
+        const oldBtn = document.getElementById('oldBtn');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+
+        // Optimized loading function
+        function loadGameOptimized() {
+            // Update button state
+            optimizedBtn.disabled = true;
+            btnIcon.innerHTML = '<div class="spinner"></div>';
+            btnText.textContent = 'Loading Game...';
+
+            // Create optimized loading page
+            const gameWindow = window.open('', '_blank');
+            if (gameWindow) {
+                gameWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Loading Unmatched Ego...</title>
+                        <meta charset="utf-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <style>
+                            body { 
+                                margin: 0; 
+                                padding: 0; 
+                                background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                min-height: 100vh;
+                                color: white;
+                            }
+                            .loader {
+                                text-align: center;
+                                animation: fadeIn 0.5s ease-in;
+                            }
+                            .spinner {
+                                width: 60px;
+                                height: 60px;
+                                border: 4px solid rgba(255,255,255,0.3);
+                                border-top: 4px solid white;
+                                border-radius: 50%;
+                                animation: spin 1s linear infinite;
+                                margin: 0 auto 20px;
+                            }
+                            @keyframes spin {
+                                0% { transform: rotate(0deg); }
+                                100% { transform: rotate(360deg); }
+                            }
+                            @keyframes fadeIn {
+                                from { opacity: 0; transform: translateY(20px); }
+                                to { opacity: 1; transform: translateY(0); }
+                            }
+                            .game-title {
+                                font-size: 24px;
+                                font-weight: bold;
+                                margin-bottom: 10px;
+                            }
+                            .loading-text {
+                                font-size: 16px;
+                                opacity: 0.9;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="loader">
+                            <div class="spinner"></div>
+                            <div class="game-title">Unmatched Ego</div>
+                            <div class="loading-text">Loading your soccer adventure...</div>
+                        </div>
+                        <script>
+                            setTimeout(() => {
+                                window.location.href = 'https://www.crazygames.com/game/unmatched-ego---soccer-action';
+                            }, 1000);
+                        </script>
+                    </body>
+                    </html>
+                `);
+                gameWindow.document.close();
+            }
+
+            // Reset button state
+            setTimeout(() => {
+                optimizedBtn.disabled = false;
+                btnIcon.textContent = '🚀';
+                btnText.textContent = 'Play with Optimization';
+            }, 2000);
+        }
+
+        // Old method (direct window.open)
+        function loadGameOld() {
+            window.open('https://www.crazygames.com/game/unmatched-ego---soccer-action', '_blank');
+        }
+
+        optimizedBtn.addEventListener('click', loadGameOptimized);
+        oldBtn.addEventListener('click', loadGameOld);
+    </script>
+</body>
+</html>

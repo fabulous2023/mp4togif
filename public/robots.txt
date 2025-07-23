@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://unmatchedego.org/sitemap.xml
+
+# Allow all search engines to crawl the site
+# This is a gaming website for Unmatched Ego - 3v3 Soccer Action Game
+
+# Disallow crawling of admin or private areas (if any)
+# Currently no restricted areas
+
+# Allow crawling of all game-related content
+Allow: /about
+Allow: /privacy
+Allow: /terms
+Allow: /cookies
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1

@@ -1,0 +1,429 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 221 83% 53%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 221 83% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Modern Sports Design System - "清新运动风 2.0" */
+@layer components {
+  .apple-gradient {
+    background: linear-gradient(135deg, #4A90E2 0%, #6366F1 100%);
+  }
+
+  .apple-glass {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .apple-shadow {
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.1);
+  }
+
+  .apple-text-gradient {
+    background: linear-gradient(135deg, #4A90E2, #6366F1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* CTA按钮专用渐变 */
+  .cta-gradient {
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+  }
+
+  /* 浅蓝紫背景 */
+  .purple-light-bg {
+    background-color: #E0E7FF;
+  }
+
+  /* 足球场动画效果 - 改为蓝色系 */
+  .soccer-field-glow {
+    animation: field-glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes field-glow {
+    from {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+    to {
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3);
+    }
+  }
+
+  /* 球员移动动画 */
+  .player-move {
+    animation: player-move 4s ease-in-out infinite;
+  }
+
+  @keyframes player-move {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(10px) translateY(-5px);
+    }
+    50% {
+      transform: translateX(-5px) translateY(8px);
+    }
+    75% {
+      transform: translateX(8px) translateY(-3px);
+    }
+  }
+
+  /* 足球滚动动画 */
+  .ball-roll {
+    animation: ball-roll 2s ease-in-out infinite;
+  }
+
+  @keyframes ball-roll {
+    0%, 100% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+      transform: translateX(-50%) rotate(180deg) translateY(-10px);
+    }
+  }
+
+  /* 🔥 世界级CTA动画效果 */
+  .neon-border {
+    position: relative;
+    background: linear-gradient(45deg, #00f5ff, #8b5cf6, #ff1493, #00f5ff);
+    background-size: 400% 400%;
+    animation: neon-flow 3s ease-in-out infinite;
+  }
+
+  @keyframes neon-flow {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .cyber-glow {
+    box-shadow:
+      0 0 20px rgba(139, 92, 246, 0.3),
+      0 0 40px rgba(139, 92, 246, 0.2),
+      0 0 60px rgba(139, 92, 246, 0.1),
+      inset 0 0 20px rgba(139, 92, 246, 0.1);
+    animation: cyber-pulse 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes cyber-pulse {
+    from {
+      box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.3),
+        0 0 40px rgba(139, 92, 246, 0.2),
+        0 0 60px rgba(139, 92, 246, 0.1),
+        inset 0 0 20px rgba(139, 92, 246, 0.1);
+    }
+    to {
+      box-shadow:
+        0 0 30px rgba(139, 92, 246, 0.5),
+        0 0 60px rgba(139, 92, 246, 0.4),
+        0 0 90px rgba(139, 92, 246, 0.3),
+        inset 0 0 30px rgba(139, 92, 246, 0.2);
+    }
+  }
+
+  .holographic-text {
+    background: linear-gradient(45deg, #00f5ff, #8b5cf6, #ff1493, #00f5ff, #8b5cf6);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: holographic-shift 3s ease-in-out infinite;
+  }
+
+  @keyframes holographic-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .particle-float {
+    animation: particle-float 4s ease-in-out infinite;
+  }
+
+  @keyframes particle-float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0.6;
+    }
+    25% {
+      transform: translateY(-10px) rotate(90deg);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-5px) rotate(180deg);
+      opacity: 0.8;
+    }
+    75% {
+      transform: translateY(-15px) rotate(270deg);
+      opacity: 0.9;
+    }
+  }
+
+  /* 响应式CTA优化 */
+  @media (max-width: 768px) {
+    .holographic-text {
+      font-size: 2.5rem !important;
+      line-height: 1.1;
+    }
+
+    .cyber-glow {
+      box-shadow:
+        0 0 10px rgba(139, 92, 246, 0.3),
+        0 0 20px rgba(139, 92, 246, 0.2),
+        0 0 30px rgba(139, 92, 246, 0.1);
+    }
+  }
+
+  /* 高性能动画优化 */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+
+  /* 按钮点击反馈 */
+  .button-press {
+    transition: all 0.1s ease-out;
+  }
+
+  .button-press:active {
+    transform: scale(0.95) translateZ(0);
+  }
+
+  /* Game Hero Animations */
+  .game-pulse {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    from {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    }
+    to {
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(59, 130, 246, 0.4);
+    }
+  }
+
+  .game-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Loading animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Game iframe styles */
+.game-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.game-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Enhanced shadow utilities */
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Game card animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Backdrop blur fallback */
+@supports not (backdrop-filter: blur(10px)) {
+  .backdrop-blur-sm {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Video embed styles */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 640px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .video-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+}
+
+/* Responsive utilities */
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding: 0 3rem;
+  }
+}
