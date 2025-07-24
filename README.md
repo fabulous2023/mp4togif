@@ -1,27 +1,28 @@
-# Unmatched Ego Website
+# MP4 to GIF Converter
 
-A professional Next.js website for Unmatched Ego - a fast-paced 3v3 third-person soccer showdown. Features modern design, SEO optimization, and excellent mobile responsiveness with real game integration.
+A modern web application for converting MP4 videos to GIF format, built with Next.js and deployed on Cloudflare Workers. Features fast client-side conversion, privacy-focused design, and automatic CI/CD deployment.
 
 ## 🚀 Features
 
 - **Next.js 14** with App Router
 - **TypeScript** for type safety
-- **Tailwind CSS** with Apple-inspired design system
+- **Tailwind CSS** with modern design system
 - **shadcn/ui** components
 - **Responsive design** for mobile and desktop
 - **SEO optimized** with structured data
 - **Analytics integration** (Google Analytics 4, Microsoft Clarity)
-- **Game integration** with CrazyGames platform
-- **Video embeds** for YouTube, TikTok, and X
-- **MDX content** for advanced strategies
-- **Compliance pages** (Privacy Policy, Cookie Policy)
+- **Client-side conversion** for privacy and speed
+- **Cloudflare Workers** deployment for global performance
+- **Automatic CI/CD** with GitHub Actions
+- **Compliance pages** (Privacy Policy, Cookie Policy, Terms of Service)
 
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS + shadcn/ui
-- **Content**: MDX with next-mdx-remote
+- **Deployment**: Cloudflare Workers with OpenNext
+- **CI/CD**: GitHub Actions
 - **Validation**: Zod schemas
 - **Analytics**: Google Analytics 4, Microsoft Clarity
 - **Icons**: Lucide React
@@ -31,7 +32,7 @@ A professional Next.js website for Unmatched Ego - a fast-paced 3v3 third-person
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd unmatched-ego-website
+   cd mp4togif
    ```
 
 2. **Install dependencies**
@@ -151,19 +152,27 @@ The website includes:
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### Cloudflare Workers (Recommended)
 
-1. **Connect your repository** to Vercel
-2. **Set environment variables** in Vercel dashboard
-3. **Deploy** automatically on push to main branch
+#### Automatic Deployment with GitHub Actions
 
-### Other Platforms
+1. **Push your code** to GitHub
+2. **Configure GitHub Secrets** (see [CLOUDFLARE_DEPLOYMENT.md](./CLOUDFLARE_DEPLOYMENT.md))
+3. **Every push to main/master** automatically deploys
 
-The website can be deployed to any platform that supports Next.js:
+#### Manual Deployment
 
-- **Netlify**: Use `npm run build` and deploy `out/` folder
-- **AWS Amplify**: Connect repository and auto-deploy
-- **DigitalOcean**: Use App Platform with Node.js
+1. **Login to Cloudflare**:
+   ```bash
+   npx wrangler login
+   ```
+
+2. **Deploy**:
+   ```bash
+   npm run deploy
+   ```
+
+For detailed deployment instructions, see [CLOUDFLARE_DEPLOYMENT.md](./CLOUDFLARE_DEPLOYMENT.md).
 
 ## 🔧 Development
 
@@ -174,6 +183,10 @@ The website can be deployed to any platform that supports Next.js:
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 - `npm run type-check` - Run TypeScript checks
+- `npm run preview` - Preview with Cloudflare Workers runtime
+- `npm run deploy` - Deploy to Cloudflare Workers
+- `npm run deploy:production` - Deploy to production environment
+- `npm run deploy:preview` - Deploy to preview environment
 
 ### Code Quality
 

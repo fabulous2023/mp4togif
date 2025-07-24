@@ -1,0 +1,20 @@
+name = "mp4-to-gif-pro"
+main = ".open-next/worker.js"
+compatibility_date = "2025-01-23"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+[vars]
+NEXT_PUBLIC_GA_ID = "G-6SMYRH1XFR"
+NEXT_PUBLIC_CLARITY_PROJECT_ID = "sjfmsn5hnn"
+
+# Production environment
+[env.production]
+name = "mp4-to-gif-pro-production"
+
+# Preview/staging environment
+[env.preview]
+name = "mp4-to-gif-pro-preview"

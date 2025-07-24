@@ -1,39 +1,17 @@
-import { NextResponse } from 'next/server';
-import { gameConfig } from '@/config/game.config';
-
 export async function GET() {
-  const baseUrl = gameConfig.site.canonicalUrl;
+  const siteUrl = 'https://mp4togif.pro';
+  
+  const robotsTxt = `# robots.txt for MP4 to GIF Converter
+# Updated: 2025-07-23
 
-  const robots = `User-agent: *
+User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: ${baseUrl}/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
-# Disallow admin and API routes
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
-
-# Allow important pages
-Allow: /
-Allow: /privacy
-Allow: /cookies
-Allow: /terms
-
-# Block common bot traps
-Disallow: /wp-admin/
-Disallow: /wp-content/
-Disallow: /cgi-bin/
-Disallow: /*.php$
-Disallow: /*.asp$
-Disallow: /*.aspx$
-
-# SEO optimizations
+# Allow all major search engines
 User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
 Allow: /
 
 User-agent: Bingbot
@@ -45,31 +23,35 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-User-agent: Baiduspider
-Allow: /
+# Block access to API endpoints for indexing
+Disallow: /api/
 
-User-agent: YandexBot
-Allow: /
+# Block access to private/internal content
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.log$
+Disallow: /*.config$
 
-User-agent: facebookexternalhit
-Allow: /
+# Prevent indexing of error pages and system files
+Disallow: /_error
+Disallow: /_next/
+Disallow: /next/
+Disallow: /static/
 
-User-agent: Twitterbot
-Allow: /
+# Allow sitemap indexing
+Allow: /sitemap.xml
+Allow: /robots.txt
 
-User-agent: LinkedInBot
-Allow: /
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
 
-User-agent: WhatsApp
-Allow: /
+# Sitemap location
+Sitemap: ${siteUrl}/sitemap.xml`;
 
-User-agent: Applebot
-Allow: /`;
-
-  return new NextResponse(robots, {
+  return new Response(robotsTxt, {
     headers: {
       'Content-Type': 'text/plain',
-      'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+      'Cache-Control': 'public, max-age=3600',
     },
   });
 }

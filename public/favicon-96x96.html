@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator - MP4 to GIF</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .icon-container { display: inline-block; margin: 10px; }
+        .icon { width: 96px; height: 96px; border-radius: 12px; margin: 10px; }
+        .download-btn { margin: 10px; padding: 8px 16px; background: #3B82F6; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .download-btn:hover { background: #2563EB; }
+    </style>
+</head>
+<body>
+    <h1>MP4 to GIF Favicon Generator</h1>
+    <div class="icon-container">
+        <svg class="icon" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#3B82F6" />
+                    <stop offset="100%" style="stop-color:#8B5CF6" />
+                </linearGradient>
+            </defs>
+            
+            <!-- Background circle -->
+            <circle cx="48" cy="48" r="48" fill="url(#gradient)" />
+            
+            <!-- Video play icon -->
+            <path d="M30 35 L30 61 L70 48 Z" fill="white" />
+            
+            <!-- GIF indicator -->
+            <rect x="65" y="65" width="20" height="8" rx="2" fill="white" opacity="0.9" />
+            <text x="75" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" font-weight="bold" fill="url(#gradient)">GIF</text>
+        </svg>
+        <br/>
+        <button class="download-btn" onclick="downloadPNG('96x96')">Download 96x96 PNG</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/4.0.1/canvg.min.js"></script>
+    <script>
+        async function downloadPNG(size) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 96;
+            canvas.height = 96;
+            const ctx = canvas.getContext('2d');
+            
+            const svg = document.querySelector('svg');
+            const svgData = new XMLSerializer().serializeToString(svg);
+            const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+            const url = URL.createObjectURL(svgBlob);
+            
+            const img = new Image();
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, 96, 96);
+                
+                canvas.toBlob(function(blob) {
+                    const link = document.createElement('a');
+                    link.download = 'favicon-96x96.png';
+                    link.href = URL.createObjectURL(blob);
+                    link.click();
+                });
+            };
+            img.src = url;
+        }
+    </script>
+</body>
+</html>

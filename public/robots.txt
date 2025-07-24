@@ -1,20 +1,46 @@
+# robots.txt for MP4 to GIF - Free Online Video to GIF Converter
+# Updated: 2025-07-23
+
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://unmatchedego.org/sitemap.xml
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
 
-# Allow all search engines to crawl the site
-# This is a gaming website for Unmatched Ego - 3v3 Soccer Action Game
+User-agent: Googlebot-Image
+Allow: /
 
-# Disallow crawling of admin or private areas (if any)
-# Currently no restricted areas
+User-agent: Bingbot
+Allow: /
 
-# Allow crawling of all game-related content
-Allow: /about
-Allow: /privacy
-Allow: /terms
-Allow: /cookies
+User-agent: Slurp
+Allow: /
 
-# Crawl delay (optional, helps with server load)
+User-agent: DuckDuckBot
+Allow: /
+
+# Block access to API endpoints for indexing
+Disallow: /api/
+
+# Block access to private/internal content
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.log$
+Disallow: /*.config$
+
+# Prevent indexing of error pages and system files
+Disallow: /_error
+Disallow: /_next/
+Disallow: /next/
+Disallow: /static/
+
+# Allow sitemap indexing
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Crawl-delay for respectful crawling
 Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://mp4togif.pro/sitemap.xml

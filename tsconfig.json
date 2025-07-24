@@ -25,8 +25,9 @@
       "@/config/*": ["./config/*"],
       "@/lib/*": ["./lib/*"],
       "@/content/*": ["./content/*"]
-    }
+    },
+    "types": ["node"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "types.d.ts"],
   "exclude": ["node_modules"]
 }

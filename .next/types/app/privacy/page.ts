@@ -1,4 +1,4 @@
-// File: D:\program\UnmatchedEgo\app\privacy\page.tsx
+// File: D:\program\MP4program\mp4togif\app\privacy\page.tsx
 import * as entry from '../../../../app/privacy/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

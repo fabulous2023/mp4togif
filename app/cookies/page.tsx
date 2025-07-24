@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { gameConfig } from '@/config/game.config';
 import { Button } from '@/components/ui/button';
 import { MobileNav } from '@/components/MobileNav';
 import { Cookie, Settings, BarChart, Shield, GamepadIcon } from 'lucide-react';
@@ -8,8 +7,8 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: `Cookie Policy | ${gameConfig.site.name}`,
-  description: `Cookie Policy for ${gameConfig.site.name} - Learn about our minimal cookie usage for essential website functionality.`,
+  title: 'Cookie Policy | MP4 to GIF Converter',
+  description: 'Cookie Policy for MP4 to GIF - Learn about our minimal cookie usage for essential website functionality.',
   robots: {
     index: true,
     follow: true,
@@ -52,7 +51,7 @@ export default function CookiesPage() {
                   })}
                 </p>
                 <p className="text-apple-gray-700 leading-relaxed">
-                  This Cookie Policy explains how {gameConfig.site.name} uses cookies and similar 
+                  This Cookie Policy explains how MP4 to GIF uses cookies and similar 
                   technologies. We believe in transparency and minimal data collection to protect your privacy.
                 </p>
               </div>

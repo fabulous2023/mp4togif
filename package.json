@@ -1,5 +1,5 @@
 {
-  "name": "unmatched-ego-website",
+  "name": "mp4togif-site",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -7,13 +7,23 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "deploy:production": "opennextjs-cloudflare build && opennextjs-cloudflare deploy --env production",
+    "deploy:preview": "opennextjs-cloudflare build && opennextjs-cloudflare deploy --env preview",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "cf:login": "wrangler login",
+    "cf:tail": "wrangler tail",
+    "cf:dev": "wrangler dev"
   },
   "dependencies": {
     "@next/mdx": "^14.2.0",
+    "@opennextjs/cloudflare": "^1.5.2",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "gif.js": "^0.2.0",
     "lite-youtube-embed": "^0.3.2",
     "lucide-react": "^0.378.0",
     "next": "^14.2.0",
@@ -40,7 +50,8 @@
     "prettier": "^3.2.0",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "^3.4.0",
-    "typescript": "^5.4.0"
+    "typescript": "^5.4.0",
+    "wrangler": "^4.25.1"
   },
   "engines": {
     "node": ">=18.17.0"

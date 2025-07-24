@@ -1,0 +1,4 @@
+# PNG favicon placeholder
+# This file would contain the actual PNG data in a real deployment
+# For now, browsers will fall back to the SVG favicon which should work for local development
+# The SVG favicon at /favicon.svg is the primary icon and should display correctly

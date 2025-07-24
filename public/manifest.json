@@ -1,35 +1,61 @@
 {
-  "name": "Unmatched Ego - Ultimate Soccer Action",
-  "short_name": "Unmatched Ego",
-  "description": "Play Unmatched Ego online for free - the ultimate soccer action game with unmatched gameplay and competitive thrills.",
+  "name": "MP4 to GIF Converter - Free Online Video to GIF Tool",
+  "short_name": "MP4 to GIF",
+  "description": "Convert MP4 videos to high-quality animated GIFs instantly. Free online tool with no signup required, no watermarks, and unlimited conversions. Perfect for social media, memes, and marketing.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#6366F1",
-  "orientation": "any",
+  "background_color": "#3B82F6",
+  "theme_color": "#8B5CF6",
+  "orientation": "portrait-primary",
   "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
     {
       "src": "/favicon-96x96.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
       "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/web-app-manifest-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "categories": ["games", "sports", "entertainment"],
-  "lang": "en",
-  "dir": "ltr"
+  "categories": ["productivity", "utilities", "multimedia"],
+  "lang": "en-US",
+  "scope": "/",
+  "theme_color": "#8B5CF6",
+  "background_color": "#3B82F6",
+  "display_override": ["window-controls-overlay"],
+  "file_handlers": [
+    {
+      "action": "/",
+      "accept": {
+        "video/*": [".mp4", ".mov", ".avi", ".webm", ".mkv"]
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ]
 }

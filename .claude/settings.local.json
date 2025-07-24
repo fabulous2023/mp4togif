@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build)",
+      "Bash(grep:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(npm run start)",
+      "Bash(curl:*)",
+      "Bash(npm install:*)"
+    ],
+    "deny": []
+  }
+}
