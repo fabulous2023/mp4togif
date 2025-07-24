@@ -1,4 +1,4 @@
-// File: D:\program\MP4program\mp4togif\app\api\sitemap\route.ts
+// File: D:\program\mp4togif\app\api\sitemap\route.ts
 import * as entry from '../../../../../app/api/sitemap/route.js'
 import type { NextRequest } from 'next/server.js'
 

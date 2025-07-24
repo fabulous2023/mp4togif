@@ -77,50 +77,55 @@ A modern web application for converting MP4 videos to GIF format, built with Nex
 
 ```
 ├── app/                    # Next.js App Router pages
-│   ├── api/               # API routes (sitemap, robots)
+│   ├── api/               # API routes (convert, sitemap, robots, health)
+│   ├── about/             # About page
 │   ├── cookies/           # Cookie policy page
 │   ├── privacy/           # Privacy policy page
+│   ├── terms/             # Terms of service page
 │   ├── globals.css        # Global styles
 │   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Homepage
+│   └── page.tsx           # Homepage with converter
 ├── components/            # React components
 │   ├── ui/               # shadcn/ui components
 │   ├── AnalyticsScripts.tsx
-│   ├── GameFrame.tsx
-│   ├── MobileNav.tsx
-│   └── VideoEmbed.tsx
-├── config/               # Configuration files
-│   └── game.config.ts    # Main game configuration
-├── content/              # MDX content files
-│   └── strategy.mdx      # Advanced strategy content
+│   ├── Footer.tsx
+│   ├── GifConverter.tsx   # Main MP4 to GIF converter
+│   ├── Header.tsx
+│   └── MobileNav.tsx
 ├── lib/                  # Utility functions
 │   └── utils.ts
+├── types/                # TypeScript type definitions
+│   └── gif.d.ts          # GIF.js type definitions
 └── public/               # Static assets
+    ├── gif.worker.js     # GIF.js worker script
     ├── favicon.svg
     └── manifest.json
 ```
 
 ## ⚙️ Configuration
 
-### Game Configuration
+### Environment Variables
 
-All website content is managed through `/config/game.config.ts`:
+Create a `.env.local` file with the following variables:
 
-- **Site information**: Name, description, keywords
-- **Game details**: Name, tagline, iframe URL
-- **Guide content**: Controls, objectives
-- **Tips and strategies**: Top 5 tips list
-- **Video content**: YouTube, TikTok, X video embeds
+```env
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_CLARITY_ID=xxxxxxxxxx
+NEXT_PUBLIC_ADSENSE_ID=ca-pub-xxxxxxxxxx
+NEXT_PUBLIC_SITE_URL=https://mp4togif.pro
+```
 
-### Content Management
+### Conversion Settings
 
-- **Short content**: Managed in `game.config.ts`
-- **Long content**: MDX files in `/content/` directory
-- **Type safety**: Zod schemas for validation
+The GIF converter supports the following options:
+- **Duration**: 1-10 seconds (default: 5 seconds)
+- **Quality**: 0.1-1.0 (default: 0.8)
+- **FPS**: 5-30 frames per second (default: 10)
+- **Max file size**: 100MB input limit
 
 ## 🎨 Design System
 
-The website uses an Apple-inspired design system with:
+The website uses a modern, clean design system with:
 
 - **Colors**: Apple's color palette (blue, green, indigo, etc.)
 - **Typography**: Clean, readable fonts with proper hierarchy

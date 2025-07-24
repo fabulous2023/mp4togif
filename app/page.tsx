@@ -1,15 +1,14 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import { Button } from '@/components/ui/button';
+import React from 'react';
 import { useAnalytics } from '@/components/AnalyticsScripts';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import GifConverter from '@/components/GifConverter';
 import Link from 'next/link';
 import {
   Upload,
   Download,
-  Play,
   CheckCircle,
   Clock,
   Shield,
@@ -25,55 +24,10 @@ import {
 } from 'lucide-react';
 
 export default function HomePage() {
-  const { trackEvent } = useAnalytics();
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [isConverting, setIsConverting] = useState(false);
-  const [convertedGif, setConvertedGif] = useState<string | null>(null);
-  const [progress, setProgress] = useState(0);
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const { trackConversionStart, trackConversionComplete } = useAnalytics();
 
-  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file && file.type.startsWith('video/')) {
-      setSelectedFile(file);
-      setConvertedGif(null);
-      trackEvent('file_selected', { event_category: 'conversion' });
-    }
-  };
-
-  const handleConvert = async () => {
-    if (!selectedFile) return;
-    
-    setIsConverting(true);
-    setProgress(0);
-    
-    // Simulate conversion progress
-    const interval = setInterval(() => {
-      setProgress(prev => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setIsConverting(false);
-          setConvertedGif('/api/placeholder/400/300'); // Placeholder for converted GIF
-          trackEvent('conversion_complete', { event_category: 'conversion' });
-          return 100;
-        }
-        return prev + 10;
-      });
-    }, 300);
-  };
-
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-  };
-
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    const file = e.dataTransfer.files[0];
-    if (file && file.type.startsWith('video/')) {
-      setSelectedFile(file);
-      setConvertedGif(null);
-      trackEvent('file_dropped', { event_category: 'conversion' });
-    }
+  const handleConversionComplete = (gifUrl: string) => {
+    trackConversionComplete(0, 0); // We'll update this with actual file size and duration later
   };
 
   return (
@@ -93,85 +47,8 @@ export default function HomePage() {
             </p>
             
             {/* Conversion Interface */}
-            <div className="max-w-2xl mx-auto">
-              <div 
-                className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
-                onDragOver={handleDragOver}
-                onDrop={handleDrop}
-              >
-                {!selectedFile ? (
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Upload className="w-10 h-10 text-blue-600" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">Drop your MP4 file here</h3>
-                    <p className="text-gray-600 mb-4">or click to browse</p>
-                    <input
-                      ref={fileInputRef}
-                      type="file"
-                      accept="video/*"
-                      onChange={handleFileSelect}
-                      className="hidden"
-                    />
-                    <Button
-                      onClick={() => fileInputRef.current?.click()}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full"
-                    >
-                      Choose MP4 File
-                    </Button>
-                  </div>
-                ) : (
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        <FileVideo className="w-8 h-8 text-blue-600" />
-                        <div>
-                          <p className="font-semibold">{selectedFile.name}</p>
-                          <p className="text-sm text-gray-600">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB</p>
-                        </div>
-                      </div>
-                      <button
-                        onClick={() => setSelectedFile(null)}
-                        className="text-gray-400 hover:text-gray-600"
-                      >
-                        ×
-                      </button>
-                    </div>
-                    
-                    {isConverting ? (
-                      <div className="text-center py-8">
-                        <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
-                        <p className="text-lg font-semibold mb-2">Converting MP4 to GIF...</p>
-                        <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                          <div 
-                            className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full transition-all duration-300"
-                            style={{ width: `${progress}%` }}
-                          ></div>
-                        </div>
-                        <p className="text-sm text-gray-600">{progress}% complete</p>
-                      </div>
-                    ) : convertedGif ? (
-                      <div className="text-center">
-                        <div className="mb-4">
-                          <img src={convertedGif} alt="Converted GIF" className="max-w-full h-auto rounded-lg mx-auto" />
-                        </div>
-                        <Button className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-3 rounded-full">
-                          <Download className="w-5 h-5 mr-2" />
-                          Download GIF
-                        </Button>
-                      </div>
-                    ) : (
-                      <Button
-                        onClick={handleConvert}
-                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-full"
-                      >
-                        <Zap className="w-5 h-5 mr-2" />
-                        Convert MP4 to GIF
-                      </Button>
-                    )}
-                  </div>
-                )}
-              </div>
+            <div id="converter">
+              <GifConverter onConversionComplete={handleConversionComplete} />
             </div>
           </div>
         </div>

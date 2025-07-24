@@ -63,17 +63,17 @@ export function useAnalytics() {
     }
   };
 
-  const trackGameStart = () => {
-    trackEvent('game_start', {
-      game_name: 'Unmatched Ego',
+  const trackConversionStart = () => {
+    trackEvent('conversion_start', {
+      tool_name: 'MP4 to GIF',
       event_category: 'engagement',
     });
   };
 
-  const trackVideoView = (videoTitle: string, videoType: string) => {
-    trackEvent('video_view', {
-      video_title: videoTitle,
-      video_type: videoType,
+  const trackConversionComplete = (fileSize: number, duration: number) => {
+    trackEvent('conversion_complete', {
+      file_size: fileSize,
+      duration: duration,
       event_category: 'engagement',
     });
   };
@@ -87,8 +87,8 @@ export function useAnalytics() {
 
   return {
     trackEvent,
-    trackGameStart,
-    trackVideoView,
+    trackConversionStart,
+    trackConversionComplete,
     trackPageView,
   };
 }

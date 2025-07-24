@@ -1,4 +1,4 @@
-// File: D:\program\MP4program\mp4togif\app\terms\page.tsx
+// File: D:\program\mp4togif\app\terms\page.tsx
 import * as entry from '../../../../app/terms/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

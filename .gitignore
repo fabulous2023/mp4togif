@@ -25,6 +25,12 @@ dist/
 *.tsbuildinfo
 next-env.d.ts
 
+# Cloudflare
+.open-next/
+.wrangler/
+cloudflare-env.d.ts
+
+
 # IDE
 .vscode/
 .idea/

@@ -1,4 +1,4 @@
-// File: D:\program\MP4program\mp4togif\app\cookies\page.tsx
+// File: D:\program\mp4togif\app\cookies\page.tsx
 import * as entry from '../../../../app/cookies/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

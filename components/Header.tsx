@@ -68,7 +68,7 @@ export function Header({ showFullNavigation = false }: HeaderProps) {
           )}
           
           {/* 移动端菜单 */}
-          <MobileNav siteName="MP4 to GIF" />
+          <MobileNav siteName="MP4 to GIF" showFullNavigation={showFullNavigation} />
         </nav>
       </div>
     </header>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { MobileNav } from '@/components/MobileNav';
-import { Cookie, Settings, BarChart, Shield, GamepadIcon } from 'lucide-react';
+import { Cookie, Settings, BarChart, Shield } from 'lucide-react';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
