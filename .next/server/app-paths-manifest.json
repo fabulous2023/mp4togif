@@ -1,17 +1,17 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/api/health/route": "app/api/health/route.js",
-  "/api/convert/route": "app/api/convert/route.js",
   "/api/robots/route": "app/api/robots/route.js",
   "/api/sitemap/route": "app/api/sitemap/route.js",
-  "/apple-icon.png/route": "app/apple-icon.png/route.js",
-  "/icon0.svg/route": "app/icon0.svg/route.js",
+  "/api/health/route": "app/api/health/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/icon1.png/route": "app/icon1.png/route.js",
+  "/apple-icon.png/route": "app/apple-icon.png/route.js",
+  "/api/convert/route": "app/api/convert/route.js",
   "/manifest.json/route": "app/manifest.json/route.js",
+  "/icon1.png/route": "app/icon1.png/route.js",
+  "/icon0.svg/route": "app/icon0.svg/route.js",
   "/page": "app/page.js",
-  "/cookies/page": "app/cookies/page.js",
   "/about/page": "app/about/page.js",
-  "/privacy/page": "app/privacy/page.js",
-  "/terms/page": "app/terms/page.js"
+  "/cookies/page": "app/cookies/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/privacy/page": "app/privacy/page.js"
 }
