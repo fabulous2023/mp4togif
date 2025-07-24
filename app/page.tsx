@@ -158,7 +158,7 @@ export default function HomePage() {
             <div>
               <h3 className="text-2xl font-bold mb-4">Professional GIF Creation Made Simple</h3>
               <p className="text-gray-600 mb-6">
-                Our MP4 to GIF converter combines speed, quality, and simplicity. Whether you're creating 
+                Our MP4 to GIF converter combines speed, quality, and simplicity. Whether you&apos;re creating 
                 memes, tutorials, or showcasing products, get professional results without technical expertise.
               </p>
               
@@ -304,7 +304,7 @@ export default function HomePage() {
             
             <details className="bg-gray-50 p-6 rounded-xl group">
               <summary className="font-semibold cursor-pointer flex justify-between items-center">
-                What's the maximum file size for MP4 to GIF conversion?
+                What&apos;s the maximum file size for MP4 to GIF conversion?
                 <ChevronRight className="w-5 h-5 transition-transform group-open:rotate-90" />
               </summary>
               <p className="mt-3 text-gray-600">

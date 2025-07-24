@@ -96,7 +96,7 @@ export default function CookiesPage() {
                 <section>
                   <div className="flex items-center gap-3 mb-4">
                     <BarChart className="h-6 w-6 text-apple-red" />
-                    <h2 className="text-xl font-bold text-apple-gray-900">Cookies We DON'T Use</h2>
+                    <h2 className="text-xl font-bold text-apple-gray-900">Cookies We DON&apos;T Use</h2>
                   </div>
                   <div className="space-y-4 text-apple-gray-700">
                     <p>We do NOT use the following types of cookies:</p>
@@ -122,7 +122,7 @@ export default function CookiesPage() {
                     </ul>
                     <p>
                       Since we only use essential cookies, disabling them may affect basic website functionality 
-                      but will not impact your privacy as we don't track or analyze your behavior.
+                      but will not impact your privacy as we don&apos;t track or analyze your behavior.
                     </p>
                   </div>
                 </section>

@@ -65,11 +65,11 @@ export default function AboutPage() {
               <div className="space-y-4 text-gray-700">
                 <p className="text-lg">
                   MP4 to GIF is the fastest, most reliable way to convert your video files into high-quality animated GIFs. 
-                  Whether you're creating memes, tutorials, product demos, or social media content, our tool delivers 
+                  Whether you&apos;re creating memes, tutorials, product demos, or social media content, our tool delivers 
                   professional results without the complexity of traditional video editing software.
                 </p>
                 <p>
-                  Founded with a simple mission - to make GIF creation accessible to everyone - we've built a platform 
+                  Founded with a simple mission - to make GIF creation accessible to everyone - we&apos;ve built a platform 
                   that combines speed, quality, and simplicity. No downloads, no sign-ups, no watermarks. Just pure, 
                   hassle-free GIF conversion that works in seconds.
                 </p>
@@ -92,13 +92,13 @@ export default function AboutPage() {
               </div>
               <div className="space-y-4 text-gray-700">
                 <p className="text-lg">
-                  We believe creating animated GIFs shouldn't require expensive software or technical expertise. 
+                  We believe creating animated GIFs shouldn&apos;t require expensive software or technical expertise. 
                   Our mission is to democratize GIF creation by providing a free, fast, and user-friendly tool 
                   that anyone can use - from casual social media users to professional marketers.
                 </p>
                 <p>
                   Every feature we build is designed with one goal in mind: making your content creation workflow 
-                  faster and more efficient. We're constantly improving our technology to ensure you get the 
+                  faster and more efficient. We&apos;re constantly improving our technology to ensure you get the 
                   best possible GIF quality while maintaining the simplicity you expect.
                 </p>
               </div>
@@ -249,7 +249,7 @@ export default function AboutPage() {
               <div className="text-center">
                 <h2 className="text-2xl font-bold mb-4">Our Promise to You</h2>
                 <p className="text-lg mb-6 opacity-90">
-                  We're committed to keeping MP4 to GIF free forever. No paywalls, no premium features, 
+                  We&apos;re committed to keeping MP4 to GIF free forever. No paywalls, no premium features, 
                   no hidden costs. Just reliable, high-quality GIF conversion whenever you need it.
                 </p>
                 <div className="flex justify-center gap-8 text-sm opacity-80">
@@ -281,12 +281,12 @@ export default function AboutPage() {
               </div>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  MP4 to GIF is more than just a tool - it's a community of creators sharing knowledge 
+                  MP4 to GIF is more than just a tool - it&apos;s a community of creators sharing knowledge 
                   and helping each other create amazing content. We regularly update our platform 
                   based on user feedback and emerging needs.
                 </p>
                 <p>
-                  Have suggestions or questions? We're here to help make your GIF creation experience 
+                  Have suggestions or questions? We&apos;re here to help make your GIF creation experience 
                   even better. Your feedback drives our innovation and improvements.
                 </p>
               </div>

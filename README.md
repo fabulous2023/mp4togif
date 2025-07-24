@@ -1,10 +1,8 @@
 # MP4 to GIF Converter
 
-A modern web application for converting MP4 videos to GIF format, built with Next.js and deployed on Cloudflare Workers. Features fast client-side conversion, privacy-focused design, and automatic CI/CD deployment.
+A modern web application for converting MP4 videos to GIF format, built with Next.js and deployed on Cloudflare Workers. Features fast client-side conversion, privacy-focused design, and manual deployment workflow.
 
 🚀 **Live Demo**: [https://mp4-to-gif-pro.graceyoyo000.workers.dev](https://mp4-to-gif-pro.graceyoyo000.workers.dev)
-
-✨ **Auto-deployment enabled** - Every push to master automatically deploys to Cloudflare Workers!
 
 ## 🚀 Features
 
@@ -17,7 +15,7 @@ A modern web application for converting MP4 videos to GIF format, built with Nex
 - **Analytics integration** (Google Analytics 4, Microsoft Clarity)
 - **Client-side conversion** for privacy and speed
 - **Cloudflare Workers** deployment for global performance
-- **Automatic CI/CD** with GitHub Actions
+- **Manual deployment** with Wrangler CLI
 - **Compliance pages** (Privacy Policy, Cookie Policy, Terms of Service)
 
 ## 🛠️ Tech Stack
@@ -26,7 +24,6 @@ A modern web application for converting MP4 videos to GIF format, built with Nex
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS + shadcn/ui
 - **Deployment**: Cloudflare Workers with OpenNext
-- **CI/CD**: GitHub Actions
 - **Validation**: Zod schemas
 - **Analytics**: Google Analytics 4, Microsoft Clarity
 - **Icons**: Lucide React
@@ -163,12 +160,6 @@ The website includes:
 
 ### Cloudflare Workers (Recommended)
 
-#### Automatic Deployment with GitHub Actions
-
-1. **Push your code** to GitHub
-2. **Configure GitHub Secrets** (see [CLOUDFLARE_DEPLOYMENT.md](./CLOUDFLARE_DEPLOYMENT.md))
-3. **Every push to main/master** automatically deploys
-
 #### Manual Deployment
 
 1. **Login to Cloudflare**:
@@ -194,8 +185,6 @@ For detailed deployment instructions, see [CLOUDFLARE_DEPLOYMENT.md](./CLOUDFLAR
 - `npm run type-check` - Run TypeScript checks
 - `npm run preview` - Preview with Cloudflare Workers runtime
 - `npm run deploy` - Deploy to Cloudflare Workers
-- `npm run deploy:production` - Deploy to production environment
-- `npm run deploy:preview` - Deploy to preview environment
 
 ### Code Quality
 

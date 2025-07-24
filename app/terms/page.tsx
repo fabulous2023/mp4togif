@@ -52,7 +52,7 @@ export default function TermsPage() {
                   <h2 className="text-xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
                   <div className="space-y-4 text-gray-700">
                     <p>
-                      By accessing and using MP4 to GIF (the "Service"), you accept and agree to be bound by these 
+                      By accessing and using MP4 to GIF (the &quot;Service&quot;), you accept and agree to be bound by these 
                       Terms of Service. These terms apply to all visitors, users, and others who access or use our 
                       free video to GIF conversion service.
                     </p>
@@ -72,7 +72,7 @@ export default function TermsPage() {
                       registration or payment.
                     </p>
                     <p>
-                      The service is provided "as-is" and we make no guarantees regarding uptime, conversion quality, 
+                      The service is provided &quot;as-is&quot; and we make no guarantees regarding uptime, conversion quality, 
                       or availability. We reserve the right to modify or discontinue the service at any time without notice.
                     </p>
                   </div>
@@ -87,7 +87,7 @@ export default function TermsPage() {
                       <li>Not upload any content that violates copyright or intellectual property rights</li>
                       <li>Not use the service to create or distribute harmful, offensive, or illegal content</li>
                       <li>Not attempt to interfere with or disrupt the service</li>
-                      <li>Not attempt to reverse engineer or access the service's underlying systems</li>
+                      <li>Not attempt to reverse engineer or access the service&apos;s underlying systems</li>
                       <li>Comply with all applicable laws and regulations</li>
                     </ul>
                   </div>
@@ -140,7 +140,7 @@ export default function TermsPage() {
                   <h2 className="text-xl font-bold text-gray-900 mb-4">7. Disclaimer of Warranties</h2>
                   <div className="space-y-4 text-gray-700">
                     <p>
-                      The MP4 to GIF service is provided on an "AS IS" and "AS AVAILABLE" basis. We make no 
+                      The MP4 to GIF service is provided on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis. We make no 
                       warranties, express or implied, including but not limited to warranties of merchantability, 
                       fitness for a particular purpose, and non-infringement.
                     </p>

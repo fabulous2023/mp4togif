@@ -1,14 +1,12 @@
 name = "mp4-to-gif-pro"
 main = ".open-next/worker.js"
-compatibility_date = "2024-09-23"
+compatibility_date = "2024-12-01"
 compatibility_flags = ["nodejs_compat"]
+
+# Build configuration
+[build]
+command = ""
 
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
-
-[env.production]
-name = "mp4-to-gif-pro-production"
-
-[env.preview]
-name = "mp4-to-gif-pro-preview"

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import {
   Upload,
@@ -172,7 +173,10 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
         onDrop={handleDrop}
       >
         {!selectedFile ? (
-          <div className="text-center">
+          <div
+            className="text-center cursor-pointer hover:bg-gray-50 transition-colors duration-200 rounded-lg p-4"
+            onClick={() => fileInputRef.current?.click()}
+          >
             <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Upload className="w-10 h-10 text-blue-600" />
             </div>
@@ -186,7 +190,10 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
               className="hidden"
             />
             <Button
-              onClick={() => fileInputRef.current?.click()}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent double trigger
+                fileInputRef.current?.click();
+              }}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full"
             >
               Choose MP4 File
@@ -278,10 +285,13 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
             ) : convertedGif ? (
               <div className="space-y-4">
                 <div className="text-center">
-                  <img 
+                  <Image 
                     src={convertedGif} 
                     alt="Converted GIF" 
+                    width={480}
+                    height={270}
                     className="max-w-full h-auto rounded-lg mx-auto border border-gray-200"
+                    unoptimized
                   />
                 </div>
                 <div className="flex gap-2">

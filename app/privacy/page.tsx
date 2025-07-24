@@ -71,7 +71,7 @@ export default function PrivacyPage() {
                     2. How We Handle Your Files
                   </h2>
                   <div className="space-y-4 text-gray-700">
-                    <p><strong>Temporary Processing:</strong> Your video files are processed temporarily in your browser's memory for conversion purposes only.</p>
+                    <p><strong>Temporary Processing:</strong> Your video files are processed temporarily in your browser&apos;s memory for conversion purposes only.</p>
                     <p><strong>No Upload Storage:</strong> We do not upload, store, or retain your files on our servers. All processing happens locally in your browser.</p>
                     <p><strong>Automatic Deletion:</strong> Files are automatically deleted from browser memory immediately after conversion is complete.</p>
                     <p><strong>No Third-Party Sharing:</strong> We never share your files with any third parties, advertisers, or analytics services.</p>
@@ -98,7 +98,7 @@ export default function PrivacyPage() {
                   </h2>
                   <div className="space-y-4 text-gray-700">
                     <p><strong>Data Ownership:</strong> You retain full ownership of all files you process using our service.</p>
-                    <p><strong>No Data Retention:</strong> Since we don't collect or store any information about you, there's nothing for us to delete or provide access to.</p>
+                    <p><strong>No Data Retention:</strong> Since we don&apos;t collect or store any information about you, there&apos;s nothing for us to delete or provide access to.</p>
                     <p><strong>Control:</strong> You have complete control over your files and can cancel any conversion at any time by simply closing your browser or navigating away.</p>
                   </div>
                 </section>
@@ -137,12 +137,12 @@ export default function PrivacyPage() {
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-gray-900 mb-4">8. Children's Privacy
+                  <h2 className="text-xl font-bold text-gray-900 mb-4">8. Children&apos;s Privacy
                   </h2>
                   <div className="space-y-4 text-gray-700">
-                    <p>Our service is designed to be used by individuals of all ages. Since we don't collect any personal information, 
+                    <p>Our service is designed to be used by individuals of all ages. Since we don&apos;t collect any personal information, 
                     our service is safe for children to use under parental supervision.</p>
-                    <p>We encourage parents and guardians to monitor their children's online activities and to contact us if they have 
+                    <p>We encourage parents and guardians to monitor their children&apos;s online activities and to contact us if they have 
                     any questions about our privacy practices.</p>
                   </div>
                 </section>
