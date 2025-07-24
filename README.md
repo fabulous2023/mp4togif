@@ -2,6 +2,10 @@
 
 A modern web application for converting MP4 videos to GIF format, built with Next.js and deployed on Cloudflare Workers. Features fast client-side conversion, privacy-focused design, and automatic CI/CD deployment.
 
+🚀 **Live Demo**: [https://mp4-to-gif-pro.graceyoyo000.workers.dev](https://mp4-to-gif-pro.graceyoyo000.workers.dev)
+
+✨ **Auto-deployment enabled** - Every push to master automatically deploys to Cloudflare Workers!
+
 ## 🚀 Features
 
 - **Next.js 14** with App Router
