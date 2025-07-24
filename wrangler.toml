@@ -7,9 +7,10 @@ compatibility_flags = ["nodejs_compat"]
 directory = ".open-next/assets"
 binding = "ASSETS"
 
-[vars]
-NEXT_PUBLIC_GA_ID = "G-6SMYRH1XFR"
-NEXT_PUBLIC_CLARITY_PROJECT_ID = "sjfmsn5hnn"
+# [vars]
+# Environment variables should be set via Cloudflare dashboard or wrangler secrets
+# NEXT_PUBLIC_GA_ID = "your-ga-id"
+# NEXT_PUBLIC_CLARITY_PROJECT_ID = "your-clarity-id"
 
 # Production environment
 [env.production]
