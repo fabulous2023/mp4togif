@@ -29,6 +29,7 @@ next-env.d.ts
 .open-next/
 .wrangler/
 cloudflare-env.d.ts
+wrangler.toml.bak
 
 # IDE
 .vscode/
@@ -57,27 +58,6 @@ coverage/
 # nyc test coverage
 .nyc_output
 
-# Cloudflare
-.wrangler/
-wrangler.toml.bak
-
-# OpenNext
-.open-next/
-
 # Temporary files
 *.tmp
 *.temp
-
-# Build outputs
-.next/
-out/
-build/
-dist/
-
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
-
-# Environment variables
-.env
-.env*.local
