@@ -43,7 +43,7 @@ export default function PrivacyPage() {
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
               <div className="mb-8">
                 <p className="text-gray-600 mb-4">
-                  <strong>Last Updated:</strong> January 22, 2025
+                  <strong>Last Updated:</strong> July 22, 2025
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   At MP4 to GIF, your privacy is of utmost importance to us. This Privacy Policy explains how we collect, 

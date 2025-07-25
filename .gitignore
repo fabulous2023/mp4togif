@@ -30,7 +30,6 @@ next-env.d.ts
 .wrangler/
 cloudflare-env.d.ts
 
-
 # IDE
 .vscode/
 .idea/
@@ -68,3 +67,17 @@ wrangler.toml.bak
 # Temporary files
 *.tmp
 *.temp
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment variables
+.env
+.env*.local

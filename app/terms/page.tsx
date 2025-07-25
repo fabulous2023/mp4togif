@@ -43,7 +43,7 @@ export default function TermsPage() {
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
               <div className="mb-8">
                 <p className="text-gray-600 mb-4">
-                  <strong>Last Updated:</strong> January 22, 2025
+                  <strong>Last Updated:</strong> July 22, 2025
                 </p>
               </div>
 

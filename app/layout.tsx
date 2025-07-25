@@ -6,7 +6,10 @@ import { AnalyticsScripts } from '@/components/AnalyticsScripts';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'MP4 to GIF Converter - Free Online Video to GIF Tool | 2025',
+  title: {
+    default: 'MP4 to GIF Converter - Free Online Video to GIF Tool | 2025',
+    template: '%s | MP4 to GIF Converter',
+  },
   description: 'Convert MP4 to GIF instantly with our free online tool. Create high-quality animated GIFs from videos without signup or watermarks. Fast, secure MP4 to GIF conversion for social media, memes, and marketing.',
   keywords: [
     'mp4 to gif',
@@ -296,6 +299,11 @@ export default function RootLayout({
           }}
         />
         <link rel="icon" href="/icon0.svg" type="image/svg+xml" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="preload" href="/gif.worker.js" as="script" />
       </head>
       <body className={inter.className}>
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
