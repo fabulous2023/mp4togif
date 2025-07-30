@@ -38,11 +38,11 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              MP4 to GIF Free Tool
+              MP4 to GIF Converter - Free Online Tool
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Convert your MP4 videos to high-quality GIFs instantly. No software download required - 
-              just upload, convert, and download your animated GIF in seconds.
+              Convert your MP4 to GIF format instantly with our powerful MP4 to GIF converter. 
+              Transform MP4 videos to high-quality GIFs online - no software download required.
             </p>
             
             {/* Conversion Interface */}
@@ -58,10 +58,10 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              How Convert MP4 to GIF
+              How to Convert MP4 to GIF Online
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Simple 3-step process to transform your MP4 videos into shareable GIFs
+              Simple 3-step process to convert MP4 to GIF format with our free MP4 to GIF converter
             </p>
           </div>
           
@@ -98,10 +98,10 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Feature
+              MP4 to GIF Converter Features
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Everything you need for perfect MP4 to GIF conversion
+              Everything you need for perfect MP4 to GIF conversion with our professional MP4 to GIF tool
             </p>
           </div>
           
@@ -110,16 +110,16 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="font-semibold mb-2">Lightning Fast</h3>
-              <p className="text-sm text-gray-600">Convert MP4 to GIF in seconds with our optimized processing engine</p>
+              <h3 className="font-semibold mb-2">Lightning Fast MP4 to GIF</h3>
+              <p className="text-sm text-gray-600">Convert MP4 to GIF in seconds with our optimized MP4 to GIF processing engine</p>
             </div>
             
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="font-semibold mb-2">100% Secure</h3>
-              <p className="text-sm text-gray-600">Your files are processed securely and automatically deleted after conversion</p>
+              <h3 className="font-semibold mb-2">Secure MP4 to GIF</h3>
+              <p className="text-sm text-gray-600">Your MP4 to GIF conversion is 100% secure with automatic file deletion after processing</p>
             </div>
             
             <div className="bg-white p-6 rounded-xl shadow-sm">
@@ -146,10 +146,10 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Why Choose MP4 to GIF
+              Why Choose Our MP4 to GIF Converter
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              The fastest, easiest way to create animated GIFs from your videos
+              The fastest, easiest MP4 to GIF converter for creating animated GIFs from your MP4 videos
             </p>
           </div>
           
@@ -218,10 +218,10 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Who Need MP4 to GIF
+              Who Needs MP4 to GIF Converter
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Perfect for creators, marketers, educators, and anyone who needs animated content
+              Our MP4 to GIF converter is perfect for creators, marketers, educators, and anyone who needs MP4 to GIF conversion
             </p>
           </div>
           
@@ -282,22 +282,22 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              FAQ for MP4 to GIF
+              MP4 to GIF Converter FAQ
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Common questions about converting MP4 videos to GIF format
+              Common questions about our MP4 to GIF converter and MP4 to GIF conversion process
             </p>
           </div>
           
           <div className="max-w-3xl mx-auto space-y-6">
             <details className="bg-gray-50 p-6 rounded-xl group">
               <summary className="font-semibold cursor-pointer flex justify-between items-center">
-                Is MP4 to GIF really free?
+                Is this MP4 to GIF converter really free?
                 <ChevronRight className="w-5 h-5 transition-transform group-open:rotate-90" />
               </summary>
               <p className="mt-3 text-gray-600">
                 Yes! Our MP4 to GIF converter is completely free to use with no hidden costs, watermarks, 
-                or sign-up required. Convert unlimited videos to GIFs without any restrictions.
+                or sign-up required. Convert unlimited MP4 to GIF files without any restrictions using our free MP4 to GIF tool.
               </p>
             </details>
             
@@ -307,8 +307,8 @@ export default function HomePage() {
                 <ChevronRight className="w-5 h-5 transition-transform group-open:rotate-90" />
               </summary>
               <p className="mt-3 text-gray-600">
-                You can upload MP4 files up to 100MB. For larger files, we recommend compressing 
-                your video first or splitting it into smaller segments before conversion.
+                Our MP4 to GIF converter supports MP4 files up to 100MB. For larger MP4 to GIF conversions, 
+                we recommend compressing your MP4 file first or splitting it into smaller segments before using our MP4 to GIF tool.
               </p>
             </details>
             
@@ -318,8 +318,8 @@ export default function HomePage() {
                 <ChevronRight className="w-5 h-5 transition-transform group-open:rotate-90" />
               </summary>
               <p className="mt-3 text-gray-600">
-                Most MP4 to GIF conversions complete within 2-5 seconds. The exact time depends 
-                on your file size and internet connection speed.
+                Most MP4 to GIF conversions with our MP4 to GIF converter complete within 2-5 seconds. 
+                The exact MP4 to GIF processing time depends on your file size and internet connection speed.
               </p>
             </details>
             

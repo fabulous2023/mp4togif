@@ -18,11 +18,11 @@ export function Footer() {
                 height={40}
                 className="rounded-xl"
               />
-              <h3 className="text-xl font-bold">MP4 to GIF</h3>
+              <h3 className="text-xl font-bold">MP4 to GIF Converter</h3>
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">
-              The fastest and easiest way to convert your MP4 videos to high-quality GIFs. 
-              No downloads, no sign-ups, completely free.
+              The fastest and easiest MP4 to GIF converter to transform your MP4 videos to high-quality GIFs. 
+              Free MP4 to GIF conversion with no downloads, no sign-ups required.
             </p>
           </div>
 

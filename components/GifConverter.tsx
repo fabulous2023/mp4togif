@@ -180,8 +180,8 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
             <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Upload className="w-10 h-10 text-blue-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Drop your MP4 file here</h3>
-            <p className="text-gray-600 mb-4">or click to browse</p>
+            <h3 className="text-xl font-semibold mb-2">Drop your MP4 file for MP4 to GIF conversion</h3>
+            <p className="text-gray-600 mb-4">Upload MP4 to start MP4 to GIF process</p>
             <input
               ref={fileInputRef}
               type="file"
@@ -196,10 +196,10 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
               }}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full"
             >
-              Choose MP4 File
+              Choose MP4 File for MP4 to GIF
             </Button>
             <p className="text-sm text-gray-500 mt-2">
-              Max file size: 100MB | Supported: MP4, MOV, AVI, WebM
+              Max file size: 100MB | MP4 to GIF converter supports: MP4, MOV, AVI, WebM
             </p>
           </div>
         ) : (
@@ -273,7 +273,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
             {isConverting ? (
               <div className="text-center py-8">
                 <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
-                <p className="text-lg font-semibold mb-2">Converting MP4 to GIF...</p>
+                <p className="text-lg font-semibold mb-2">MP4 to GIF conversion in progress...</p>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div 
                     className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full transition-all duration-300"
@@ -316,7 +316,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3"
               >
                 <Play className="w-5 h-5 mr-2" />
-                Convert MP4 to Animation
+                Start MP4 to GIF Conversion
               </Button>
             )}
           </div>
