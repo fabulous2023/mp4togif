@@ -2,10 +2,9 @@
 
 import React from 'react';
 import { useAnalytics } from '@/components/AnalyticsScripts';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import GifConverter from '@/components/GifConverter';
 import Link from 'next/link';
+import { Footer } from '@/components/Footer';
 import {
   Upload,
   Download,
@@ -32,7 +31,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      
 
       {/* Hero Section */}
       <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">

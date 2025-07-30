@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { AnalyticsScripts } from '@/components/AnalyticsScripts';
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -306,8 +308,10 @@ export default function RootLayout({
         <link rel="preload" href="/gif.worker.js" as="script" />
       </head>
       <body className={inter.className}>
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-          {children}
+        <div className="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
         </div>
         <AnalyticsScripts
           gaId={process.env.NEXT_PUBLIC_GA_ID}

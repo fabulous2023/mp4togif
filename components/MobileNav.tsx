@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 interface MobileNavProps {
   siteName: string;
@@ -86,14 +87,15 @@ export function MobileNav({ siteName, showFullNavigation = false }: MobileNavPro
               maxWidth: 'calc(100% - 60px)'
             }}
           >
-            <img 
-              src="/favicon.svg" 
-              alt="图标" 
+            <Image
+              src="/favicon.svg"
+              alt="MP4 to GIF Logo"
+              width={28}
+              height={28}
               style={{ 
-                width: '28px', 
-                height: '28px',
                 flexShrink: 0
               }}
+              priority
             />
             <span 
               style={{
