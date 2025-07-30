@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "preview": "opennextjs-cloudflare build && wrangler dev",
-    "deploy": "opennextjs-cloudflare build && wrangler deploy",
+    "preview": "npx next build && npx serve out",
+    "deploy": "npx next build && wrangler pages deploy out",
     "cf:login": "wrangler login",
     "cf:tail": "wrangler tail",
     "cf:dev": "wrangler dev"

@@ -1,214 +1,92 @@
-# MP4 to GIF Converter
+# MP4 到 GIF 转换器
 
-A modern web application for converting MP4 videos to GIF format, built with Next.js and deployed on Cloudflare Workers. Features fast client-side conversion, privacy-focused design, and manual deployment workflow.
+这是一个免费的在线 MP4 到 GIF 转换工具，完全在浏览器中运行，无需上传文件到服务器，保证用户隐私。
 
-🚀 **Live Demo**: [https://mp4-to-gif-pro.graceyoyo000.workers.dev](https://mp4-to-gif-pro.graceyoyo000.workers.dev)
+## 功能特点
 
-## 🚀 Features
+- 完全客户端处理，无需上传视频
+- 高质量 GIF 输出
+- 自定义设置（帧率、质量、尺寸等）
+- 快速转换
+- 无水印
+- 免费使用
 
-- **Next.js 14** with App Router
-- **TypeScript** for type safety
-- **Tailwind CSS** with modern design system
-- **shadcn/ui** components
-- **Responsive design** for mobile and desktop
-- **SEO optimized** with structured data
-- **Analytics integration** (Google Analytics 4, Microsoft Clarity)
-- **Client-side conversion** for privacy and speed
-- **Cloudflare Workers** deployment for global performance
-- **Manual deployment** with Wrangler CLI
-- **Compliance pages** (Privacy Policy, Cookie Policy, Terms of Service)
+## 技术栈
 
-## 🛠️ Tech Stack
+- Next.js 14
+- React 18
+- TypeScript
+- Tailwind CSS
+- gif.js 库用于 GIF 生成
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS + shadcn/ui
-- **Deployment**: Cloudflare Workers with OpenNext
-- **Validation**: Zod schemas
-- **Analytics**: Google Analytics 4, Microsoft Clarity
-- **Icons**: Lucide React
+## 本地开发
 
-## 📦 Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd mp4togif
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   cp .env.local.example .env.local
-   ```
-   
-   Edit `.env.local` with your actual values:
-   ```env
-   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-   NEXT_PUBLIC_CLARITY_ID=xxxxxxxxxx
-   NEXT_PUBLIC_ADSENSE_ID=ca-pub-xxxxxxxxxx
-   NEXT_PUBLIC_SITE_URL=https://unmatchedego.org
-   ```
-
-4. **Run the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   ```
-
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 🏗️ Project Structure
-
-```
-├── app/                    # Next.js App Router pages
-│   ├── api/               # API routes (convert, sitemap, robots, health)
-│   ├── about/             # About page
-│   ├── cookies/           # Cookie policy page
-│   ├── privacy/           # Privacy policy page
-│   ├── terms/             # Terms of service page
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Homepage with converter
-├── components/            # React components
-│   ├── ui/               # shadcn/ui components
-│   ├── AnalyticsScripts.tsx
-│   ├── Footer.tsx
-│   ├── GifConverter.tsx   # Main MP4 to GIF converter
-│   ├── Header.tsx
-│   └── MobileNav.tsx
-├── lib/                  # Utility functions
-│   └── utils.ts
-├── types/                # TypeScript type definitions
-│   └── gif.d.ts          # GIF.js type definitions
-└── public/               # Static assets
-    ├── gif.worker.js     # GIF.js worker script
-    ├── favicon.svg
-    └── manifest.json
+1. 克隆仓库
+```bash
+git clone https://github.com/yourusername/mp4togif.git
+cd mp4togif
 ```
 
-## ⚙️ Configuration
-
-### Environment Variables
-
-Create a `.env.local` file with the following variables:
-
-```env
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-NEXT_PUBLIC_CLARITY_ID=xxxxxxxxxx
-NEXT_PUBLIC_ADSENSE_ID=ca-pub-xxxxxxxxxx
-NEXT_PUBLIC_SITE_URL=https://mp4togif.pro
+2. 安装依赖
+```bash
+npm install
 ```
 
-### Conversion Settings
+3. 启动开发服务器
+```bash
+npm run dev
+```
 
-The GIF converter supports the following options:
-- **Duration**: 1-10 seconds (default: 5 seconds)
-- **Quality**: 0.1-1.0 (default: 0.8)
-- **FPS**: 5-30 frames per second (default: 10)
-- **Max file size**: 100MB input limit
+4. 在浏览器中访问 http://localhost:3000
 
-## 🎨 Design System
+## 构建和部署
 
-The website uses a modern, clean design system with:
+### 本地预览构建
+```bash
+npm run preview
+```
 
-- **Colors**: Apple's color palette (blue, green, indigo, etc.)
-- **Typography**: Clean, readable fonts with proper hierarchy
-- **Components**: Consistent spacing and border radius
-- **Animations**: Smooth transitions and micro-interactions
-- **Responsive**: Mobile-first approach
+### 部署到 Cloudflare Pages
 
-## 📱 Mobile Optimization
+1. 登录到 Cloudflare
+```bash
+npm run cf:login
+```
 
-- **Responsive grid**: Adapts to all screen sizes
-- **Touch-friendly**: Large tap targets and gestures
-- **Performance**: Optimized images and lazy loading
-- **Navigation**: Collapsible mobile menu
-- **Game iframe**: Responsive aspect ratio
+2. 构建并部署
+```bash
+npm run deploy
+```
 
-## 🔍 SEO Features
+或者，您可以通过 Cloudflare Pages 仪表板设置自动部署：
 
-- **Meta tags**: Dynamic title, description, keywords
-- **Open Graph**: Social media sharing optimization
-- **Twitter Cards**: Enhanced Twitter sharing
-- **Structured data**: JSON-LD for search engines
-- **Sitemap**: Auto-generated XML sitemap
-- **Robots.txt**: Search engine crawling instructions
+1. 在 Cloudflare Pages 仪表板中创建新项目
+2. 连接您的 GitHub 仓库
+3. 设置以下构建配置：
+   - 构建命令: `npm run build`
+   - 输出目录: `out`
+   - Node.js 版本: 18
 
-## 📊 Analytics
+## 项目结构
 
-The website includes:
+- `/app` - Next.js 应用程序路由和页面
+- `/components` - React 组件
+- `/public` - 静态资源，包括 gif.worker.js
+- `/lib` - 实用工具和辅助函数
 
-- **Google Analytics 4**: Page views, events, conversions
-- **Microsoft Clarity**: User session recordings
-- **Custom events**: Game starts, video views
-- **Privacy compliant**: Lazy loading and opt-out options
+## Cloudflare Pages 配置文件
 
-## 🚀 Deployment
+- `public/_headers` - 设置 HTTP 头信息
+- `public/_redirects` - 配置 URL 重定向规则
+- `public/robots.txt` - 搜索引擎爬虫规则
+- `public/sitemap.xml` - 站点地图
 
-### Cloudflare Workers (Recommended)
+## 注意事项
 
-#### Manual Deployment
+- 确保 `gif.worker.js` 文件在 `/public` 目录中，这对于 GIF 转换功能至关重要
+- 该项目使用静态导出模式，适合部署在 Cloudflare Pages 上
+- 所有 API 路由已转换为静态文件
 
-1. **Login to Cloudflare**:
-   ```bash
-   npx wrangler login
-   ```
+## 许可证
 
-2. **Deploy**:
-   ```bash
-   npm run deploy
-   ```
-
-For detailed deployment instructions, see [CLOUDFLARE_DEPLOYMENT.md](./CLOUDFLARE_DEPLOYMENT.md).
-
-## 🔧 Development
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript checks
-- `npm run preview` - Preview with Cloudflare Workers runtime
-- `npm run deploy` - Deploy to Cloudflare Workers
-
-### Code Quality
-
-- **ESLint**: Code linting and formatting
-- **Prettier**: Code formatting with Tailwind plugin
-- **TypeScript**: Type checking and IntelliSense
-- **Husky**: Git hooks for quality checks (optional)
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
-
-## 📞 Support
-
-For support and questions:
-
-- **Email**: support@unmatchedego.org
-- **Issues**: GitHub Issues
-- **Documentation**: This README and inline comments
+MIT

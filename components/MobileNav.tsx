@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Menu, X, FileVideo } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 interface MobileNavProps {
   siteName: string;
@@ -13,119 +12,385 @@ interface MobileNavProps {
 export function MobileNav({ siteName, showFullNavigation = false }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  const handleLinkClick = (href: string) => {
-    setIsOpen(false);
-    if (href.startsWith('#')) {
-      document.getElementById(href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
-    }
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  if (!isOpen) {
+    return (
+      <div className="md:hidden">
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={toggleMenu}
+          className="p-2"
+          aria-label="打开菜单"
+        >
+          <Menu className="h-5 w-5" />
+        </Button>
+      </div>
+    );
+  }
+
   return (
-    <div className="md:hidden">
-      <Button
-        variant="ghost"
-        size="sm"
-        onClick={toggleMenu}
-        className="p-2"
-        aria-label="Toggle menu"
+    <>
+      <div className="md:hidden">
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={toggleMenu}
+          className="p-2"
+          aria-label="关闭菜单"
+        >
+          <X className="h-5 w-5" />
+        </Button>
+      </div>
+
+      {/* 真正的全屏遮罩 */}
+      <div 
+        style={{ 
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          backgroundColor: '#ffffff',
+          zIndex: 99999,
+          overflow: 'hidden'
+        }}
       >
-        {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-      </Button>
-
-      {/* Mobile Menu Overlay */}
-      {isOpen && (
-        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm" onClick={toggleMenu}>
-          <div
-            className="absolute right-0 top-0 h-full w-64 bg-white shadow-xl"
-            onClick={(e) => e.stopPropagation()}
+        {/* 顶部栏 - 修复字体显示问题 */}
+        <div 
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '12px 16px',
+            borderBottom: '1px solid #d1d5db',
+            height: '60px',
+            width: '100%',
+            boxSizing: 'border-box'
+          }}
+        >
+          <div 
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              flex: 1,
+              minWidth: 0,
+              maxWidth: 'calc(100% - 60px)'
+            }}
           >
-            <div className="flex items-center justify-between p-4 border-b border-gray-200">
-              <div className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
-                  <FileVideo className="h-4 w-4 text-white" />
-                </div>
-                <span className="font-semibold text-gray-900">{siteName}</span>
-              </div>
-              <Button variant="ghost" size="sm" onClick={toggleMenu}>
-                <X className="h-4 w-4" />
-              </Button>
-            </div>
+            <img 
+              src="/favicon.svg" 
+              alt="图标" 
+              style={{ 
+                width: '28px', 
+                height: '28px',
+                flexShrink: 0
+              }}
+            />
+            <span 
+              style={{
+                fontSize: '16px',
+                fontWeight: '600',
+                color: '#111827',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+                maxWidth: '100%'
+              }}
+            >
+              MP4 to GIF
+            </span>
+          </div>
+          <button 
+            onClick={closeMenu}
+            style={{ 
+              padding: '8px',
+              flexShrink: 0,
+              backgroundColor: 'transparent',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              width: '40px',
+              height: '40px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            <X style={{ width: '20px', height: '20px' }} />
+          </button>
+        </div>
 
-            <nav className="p-4">
-              <div className="space-y-2">
-                {showFullNavigation ? (
-                  <>
-                    <button
-                      onClick={() => handleLinkClick('#converter')}
-                      className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
-                    >
-                      Convert Now
-                    </button>
-                    <button
-                      onClick={() => handleLinkClick('#features')}
-                      className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
-                    >
-                      Features
-                    </button>
-                    <button
-                      onClick={() => handleLinkClick('#why-choose')}
-                      className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
-                    >
-                      Why Choose Us
-                    </button>
-                    <button
-                      onClick={() => handleLinkClick('#faq')}
-                      className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
-                    >
-                      FAQ
-                    </button>
-                    <Link
-                      href="/about"
-                      onClick={toggleMenu}
-                      className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
-                    >
-                      About
-                    </Link>
-                  </>
-                ) : (
-                  <>
-                    <Link
-                      href="/"
-                      onClick={toggleMenu}
-                      className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
-                    >
-                      Home
-                    </Link>
-                    <Link
-                      href="/about"
-                      onClick={toggleMenu}
-                      className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
-                    >
-                      About
-                    </Link>
-                    <Link
-                      href="/privacy"
-                      onClick={toggleMenu}
-                      className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
-                    >
-                      Privacy
-                    </Link>
-                    <Link
-                      href="/terms"
-                      onClick={toggleMenu}
-                      className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors"
-                    >
-                      Terms
-                    </Link>
-                  </>
-                )}
-              </div>
-            </nav>
+        {/* 菜单项列表 */}
+        <div style={{ 
+          height: 'calc(100vh - 60px - 140px)',
+          overflowY: 'auto',
+          paddingTop: '8px'
+        }}>
+          <div 
+            onClick={closeMenu}
+            style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '16px 24px',
+              borderBottom: '1px solid #e5e7eb',
+              cursor: 'pointer',
+              backgroundColor: '#ffffff',
+              minHeight: '60px'
+            }}
+          >
+            <a 
+              href="#converter" 
+              style={{
+                color: '#1f2937',
+                fontSize: '18px',
+                fontWeight: '500',
+                textDecoration: 'none'
+              }}
+            >
+              CONVERTER
+            </a>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              style={{ color: '#9ca3af' }}
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+
+          <div 
+            onClick={closeMenu}
+            style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '16px 24px',
+              borderBottom: '1px solid #e5e7eb',
+              cursor: 'pointer',
+              backgroundColor: '#ffffff',
+              minHeight: '60px'
+            }}
+          >
+            <a 
+              href="#features" 
+              style={{
+                color: '#1f2937',
+                fontSize: '18px',
+                fontWeight: '500',
+                textDecoration: 'none'
+              }}
+            >
+              FEATURES
+            </a>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              style={{ color: '#9ca3af' }}
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+
+          <div 
+            onClick={closeMenu}
+            style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '16px 24px',
+              borderBottom: '1px solid #e5e7eb',
+              cursor: 'pointer',
+              backgroundColor: '#ffffff',
+              minHeight: '60px'
+            }}
+          >
+            <a 
+              href="#how-to-use" 
+              style={{
+                color: '#1f2937',
+                fontSize: '18px',
+                fontWeight: '500',
+                textDecoration: 'none'
+              }}
+            >
+              HOW TO USE
+            </a>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              style={{ color: '#9ca3af' }}
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+
+          <div 
+            onClick={closeMenu}
+            style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '16px 24px',
+              borderBottom: '1px solid #e5e7eb',
+              cursor: 'pointer',
+              backgroundColor: '#ffffff',
+              minHeight: '60px'
+            }}
+          >
+            <a 
+              href="#faq" 
+              style={{
+                color: '#1f2937',
+                fontSize: '18px',
+                fontWeight: '500',
+                textDecoration: 'none'
+              }}
+            >
+              FAQ
+            </a>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              style={{ color: '#9ca3af' }}
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+
+          <div 
+            onClick={closeMenu}
+            style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '16px 24px',
+              borderBottom: '1px solid #e5e7eb',
+              cursor: 'pointer',
+              backgroundColor: '#ffffff',
+              minHeight: '60px'
+            }}
+          >
+            <a 
+              href="/about" 
+              style={{
+                color: '#1f2937',
+                fontSize: '18px',
+                fontWeight: '500',
+                textDecoration: 'none'
+              }}
+            >
+              ABOUT
+            </a>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              style={{ color: '#9ca3af' }}
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
           </div>
         </div>
-      )}
-    </div>
+
+        {/* 底部按钮 */}
+        <div 
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            padding: '16px',
+            backgroundColor: '#ffffff',
+            height: '140px',
+            boxSizing: 'border-box',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '12px'
+          }}
+        >
+          <a 
+            href="#converter"
+            onClick={closeMenu}
+            style={{
+              display: 'block',
+              width: '100%',
+              padding: '16px',
+              backgroundColor: '#2563eb',
+              color: 'white',
+              fontWeight: '600',
+              borderRadius: '8px',
+              textAlign: 'center',
+              textDecoration: 'none',
+              boxSizing: 'border-box'
+            }}
+          >
+            Try for free
+          </a>
+          <a 
+            href="#how-to-use"
+            onClick={closeMenu}
+            style={{
+              display: 'block',
+              width: '100%',
+              padding: '16px',
+              backgroundColor: '#f3f4f6',
+              color: '#374151',
+              fontWeight: '600',
+              borderRadius: '8px',
+              textAlign: 'center',
+              textDecoration: 'none',
+              border: '1px solid #e5e7eb',
+              boxSizing: 'border-box'
+            }}
+          >
+            How it works
+          </a>
+        </div>
+      </div>
+    </>
   );
 }
