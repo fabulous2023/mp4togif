@@ -4,7 +4,6 @@ import React from 'react';
 import { useAnalytics } from '@/components/AnalyticsScripts';
 import GifConverter from '@/components/GifConverter';
 import Link from 'next/link';
-import { Footer } from '@/components/Footer';
 import {
   Upload,
   Download,
@@ -38,7 +37,7 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              MP4 to GIF Converter - Free Online Tool
+               Free Online MP4 to GIF Converter
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-8">
               Convert your MP4 to GIF format instantly with our powerful MP4 to GIF converter. 
@@ -106,35 +105,35 @@ export default function HomePage() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="font-semibold mb-2">Lightning Fast MP4 to GIF</h3>
+              <h3 className="text-lg font-semibold mb-2">Lightning Fast MP4 to GIF</h3>
               <p className="text-sm text-gray-600">Convert MP4 to GIF in seconds with our optimized MP4 to GIF processing engine</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="font-semibold mb-2">Secure MP4 to GIF</h3>
+              <h3 className="text-lg font-semibold mb-2">Secure MP4 to GIF</h3>
               <p className="text-sm text-gray-600">Your MP4 to GIF conversion is 100% secure with automatic file deletion after processing</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <Sparkles className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="font-semibold mb-2">High Quality</h3>
+              <h3 className="text-lg font-semibold mb-2">High Quality</h3>
               <p className="text-sm text-gray-600">Get crisp, clear GIFs optimized for web and social media sharing</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Globe className="w-6 h-6 text-orange-600" />
               </div>
-              <h3 className="font-semibold mb-2">No Software</h3>
+              <h3 className="text-lg font-semibold mb-2">No Software</h3>
               <p className="text-sm text-gray-600">Convert directly in your browser - no downloads or installations needed</p>
             </div>
           </div>
@@ -226,51 +225,51 @@ export default function HomePage() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <Users className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="font-semibold mb-2">Social Media Managers</h3>
+              <h3 className="text-lg font-semibold mb-2">Social Media Managers</h3>
               <p className="text-sm text-gray-600">Create engaging GIF content for brand campaigns, announcements, and viral marketing across all social platforms.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <Star className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="font-semibold mb-2">Content Creators</h3>
+              <h3 className="text-lg font-semibold mb-2">Content Creators</h3>
               <p className="text-sm text-gray-600">Transform video highlights into shareable GIFs for YouTube thumbnails, TikTok teasers, and Instagram stories.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <ImageIcon className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="font-semibold mb-2">Educators & Trainers</h3>
+              <h3 className="text-lg font-semibold mb-2">Educators & Trainers</h3>
               <p className="text-sm text-gray-600">Create instructional GIFs for tutorials, step-by-step guides, and educational content that loads quickly.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-orange-600" />
               </div>
-              <h3 className="font-semibold mb-2">Meme Creators</h3>
+              <h3 className="text-lg font-semibold mb-2">Meme Creators</h3>
               <p className="text-sm text-gray-600">Turn funny video moments into viral GIF memes that spread across Reddit, Discord, and Twitter.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
                 <FileVideo className="w-6 h-6 text-red-600" />
               </div>
-              <h3 className="font-semibold mb-2">Web Developers</h3>
+              <h3 className="text-lg font-semibold mb-2">Web Developers</h3>
               <p className="text-sm text-gray-600">Generate lightweight GIF assets for websites, email campaigns, and digital presentations.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
                 <Lock className="w-6 h-6 text-indigo-600" />
               </div>
-              <h3 className="font-semibold mb-2">Marketing Teams</h3>
+              <h3 className="text-lg font-semibold mb-2">Marketing Teams</h3>
               <p className="text-sm text-gray-600">Create product demos, testimonials, and promotional GIFs for email marketing and landing pages.</p>
             </div>
           </div>
@@ -358,8 +357,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

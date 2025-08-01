@@ -35,15 +35,14 @@ export const metadata: Metadata = {
     'secure video conversion',
     'no signup gif converter',
     'mp4 to gif 2025',
-    'best mp4 to gif converter',
     'instant gif maker',
     'webm to gif',
     'mov to gif',
     'avi to gif',
-    'video to gif no watermark',
+    'video to gif',
     'free video to gif',
     'gif converter online',
-    'create gif from video'
+    'gif from video'
   ],
   authors: [{ name: 'MP4 to GIF Converter Team' }],
   creator: 'MP4 to GIF Converter',
@@ -68,11 +67,11 @@ export const metadata: Metadata = {
     siteName: 'MP4 to GIF Converter',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/web-app-manifest-512x512.png',
         width: 1200,
         height: 630,
         alt: 'MP4 to GIF Converter - Free Online Video to GIF Tool',
-        type: 'image/jpeg',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -83,7 +82,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'MP4 to GIF Converter - Free Online Video to GIF Tool',
     description: 'Convert MP4 to GIF instantly! Free online tool with no signup or watermarks. Create animated GIFs for social media, memes, and marketing.',
-    images: ['/og-image.jpg'],
+    images: ['/web-app-manifest-512x512.png'],
     creator: '@mp4togif',
     site: '@mp4togif',
   },
@@ -110,14 +109,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '48x48', type: 'image/x-icon' },
-      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/icon0.svg', type: 'image/svg+xml' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' },
+      { url: '/icon1.png', sizes: '96x96', type: 'image/png' },
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png', rel: 'apple-touch-icon' },
+      { url: '/web-app-manifest-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/web-app-manifest-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
     other: [
       { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#3B82F6' },
@@ -194,7 +190,7 @@ export default function RootLayout({
       url: 'https://mp4togif.pro',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://mp4togif.pro/favicon-96x96.png',
+        url: 'https://mp4togif.pro/icon1.png',
         width: 96,
         height: 96,
         caption: 'MP4 to GIF Converter Logo'
@@ -237,7 +233,7 @@ export default function RootLayout({
     screenshot: [
       {
         '@type': 'ImageObject',
-        url: 'https://mp4togif.pro/og-image.jpg',
+        url: 'https://mp4togif.pro/web-app-manifest-512x512.png',
         width: 1200,
         height: 630,
         caption: 'MP4 to GIF Converter Interface'
@@ -300,7 +296,7 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
-        <link rel="icon" href="/icon0.svg" type="image/svg+xml" />
+        <link rel="icon" href="/icon1.png" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

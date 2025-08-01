@@ -12,7 +12,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-4">
               <Image
-                src="/icon0.svg"
+                src="/icon1.png"
                 alt="MP4 to GIF Logo"
                 width={40}
                 height={40}

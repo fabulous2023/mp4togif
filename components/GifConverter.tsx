@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import {
@@ -12,28 +12,49 @@ import {
   AlertCircle,
   FileVideo,
   Settings,
-  X
+  X,
+  Loader2,
 } from 'lucide-react';
-
-// Import gif.js for real GIF generation
-import GIF from 'gif.js';
+import { FFmpeg } from '@ffmpeg/ffmpeg';
+import { fetchFile, toBlobURL } from '@ffmpeg/util';
 
 interface GifConverterProps {
   onConversionComplete?: (gifUrl: string) => void;
 }
 
 export default function GifConverter({ onConversionComplete }: GifConverterProps) {
+  const [ffmpeg, setFfmpeg] = useState<FFmpeg | null>(null);
+  const [ffmpegLoaded, setFfmpegLoaded] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isConverting, setIsConverting] = useState(false);
   const [convertedGif, setConvertedGif] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [duration, setDuration] = useState<number>(5);
-  const [quality, setQuality] = useState<number>(0.8);
+  const [quality, setQuality] = useState<number>(10); // Corresponds to ffmpeg crf
   const [fps, setFps] = useState<number>(10);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const loadFfmpeg = useCallback(async () => {
+    const ffmpegInstance = new FFmpeg();
+    ffmpegInstance.on('log', ({ message }) => {
+      console.log(message);
+    });
+    ffmpegInstance.on('progress', ({ progress }) => {
+      setProgress(Math.round(progress * 100));
+    });
+    const baseURL = 'https://unpkg.com/@ffmpeg/core@0.12.6/dist/umd'
+    await ffmpegInstance.load({
+        coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
+        wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
+    });
+    setFfmpeg(ffmpegInstance);
+    setFfmpegLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    loadFfmpeg();
+  }, [loadFfmpeg]);
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -63,86 +84,44 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
   };
 
   const convertToGif = useCallback(async () => {
-    if (!selectedFile) return;
+    if (!ffmpeg || !selectedFile) return;
 
     setIsConverting(true);
     setError(null);
     setProgress(0);
 
     try {
-      // Create video element
-      const video = document.createElement('video');
-      video.src = URL.createObjectURL(selectedFile);
-      video.crossOrigin = 'anonymous';
+      const inputFileName = 'input.mp4';
+      const outputFileName = 'output.gif';
+      
+      await ffmpeg.writeFile(inputFileName, await fetchFile(selectedFile));
 
-      await new Promise((resolve, reject) => {
-        video.onloadedmetadata = resolve;
-        video.onerror = reject;
-      });
+      // High quality: -crf 20, Medium: -crf 25, Low: -crf 30
+      const crf = 35 - quality; // Simple mapping from our quality scale
 
-      // Create canvas
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      if (!ctx) {
-        throw new Error('Could not get canvas context');
-      }
+      const command: [string, ...string[]] = [
+        '-i', inputFileName,
+        '-t', String(duration),
+        '-vf', `fps=${fps},scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse`,
+        '-loop', '0',
+        '-crf', String(crf),
+        outputFileName
+      ];
 
-      // Set canvas dimensions
-      const maxWidth = 480;
-      const scale = Math.min(maxWidth / video.videoWidth, 1);
-      canvas.width = video.videoWidth * scale;
-      canvas.height = video.videoHeight * scale;
+      await ffmpeg.exec(command);
 
-      // Initialize GIF encoder
-      const gif = new GIF({
-        workers: 2,
-        quality: Math.round((1 - quality) * 20), // Convert quality to gif.js format
-        width: canvas.width,
-        height: canvas.height,
-        workerScript: '/gif.worker.js' // We'll need to add this to public folder
-      });
-
-      const totalFrames = Math.min(duration * fps, 100); // Limit frames for performance
-      const frameDelay = 1000 / fps;
-
-      // Capture frames and add to GIF
-      for (let i = 0; i < totalFrames; i++) {
-        const time = (i / totalFrames) * Math.min(duration, video.duration);
-        video.currentTime = time;
-
-        await new Promise(resolve => {
-          video.onseeked = resolve;
-        });
-
-        // Draw frame to canvas
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-        // Add frame to GIF
-        gif.addFrame(canvas, { delay: frameDelay, copy: true });
-
-        setProgress((i / totalFrames) * 80); // 80% for frame capture
-      }
-
-      // Render GIF
-      const gifBlob = await new Promise<Blob>((resolve, reject) => {
-        gif.on('finished', resolve);
-        gif.on('progress', (progress) => {
-          setProgress(80 + progress * 20); // 20% for rendering
-        });
-        gif.render();
-      });
-
-      const gifUrl = URL.createObjectURL(gifBlob);
+      const data = await ffmpeg.readFile(outputFileName);
+      const gifUrl = URL.createObjectURL(new Blob([data], { type: 'image/gif' }));
       setConvertedGif(gifUrl);
       onConversionComplete?.(gifUrl);
 
     } catch (err) {
+      console.error(err);
       setError(err instanceof Error ? err.message : 'Conversion failed');
     } finally {
       setIsConverting(false);
-      setProgress(100);
     }
-  }, [selectedFile, duration, quality, fps, onConversionComplete]);
+  }, [ffmpeg, selectedFile, duration, quality, fps, onConversionComplete]);
 
 
 
@@ -172,7 +151,13 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
         onDragOver={handleDragOver}
         onDrop={handleDrop}
       >
-        {!selectedFile ? (
+        {!ffmpegLoaded ? (
+          <div className="text-center py-12">
+            <Loader2 className="w-12 h-12 text-blue-600 animate-spin mx-auto mb-4" />
+            <p className="text-lg font-semibold text-gray-700">Loading Converter...</p>
+            <p className="text-gray-500">Please wait, this may take a moment.</p>
+          </div>
+        ) : !selectedFile ? (
           <div
             className="text-center cursor-pointer hover:bg-gray-50 transition-colors duration-200 rounded-lg p-4"
             onClick={() => fileInputRef.current?.click()}
@@ -243,9 +228,9 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
                   onChange={(e) => setQuality(Number(e.target.value))}
                   className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 >
-                  <option value="0.6">Medium</option>
-                  <option value="0.8">High</option>
-                  <option value="1.0">Maximum</option>
+                  <option value="5">Low</option>
+                  <option value="10">Medium</option>
+                  <option value="15">High</option>
                 </select>
               </div>
               

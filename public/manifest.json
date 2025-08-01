@@ -10,11 +10,11 @@
   "icons": [
     {
       "src": "/favicon.ico",
-      "sizes": "48x48",
+      "sizes": "32x32",
       "type": "image/x-icon"
     },
     {
-      "src": "/favicon-96x96.png",
+      "src": "/icon1.png",
       "sizes": "96x96",
       "type": "image/png"
     },
@@ -52,7 +52,7 @@
   ],
   "screenshots": [
     {
-      "src": "/og-image.jpg",
+      "src": "/web-app-manifest-512x512.png",
       "sizes": "1200x630",
       "type": "image/jpeg",
       "form_factor": "wide"
