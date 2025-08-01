@@ -159,14 +159,14 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
           </div>
         ) : !selectedFile ? (
           <div
-            className="text-center cursor-pointer hover:bg-gray-50 transition-colors duration-200 rounded-lg p-4"
+            className="text-center cursor-pointer hover:bg-gray-50 transition-colors duration-200 rounded-lg p-4 sm:p-6"
             onClick={() => fileInputRef.current?.click()}
           >
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Upload className="w-10 h-10 text-blue-600" />
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Upload className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Drop your MP4 file for MP4 to GIF conversion</h3>
-            <p className="text-gray-600 mb-4">Upload MP4 to start MP4 to GIF process</p>
+            <h3 className="text-lg sm:text-xl font-semibold mb-2 px-2">Drop your MP4 file for MP4 to GIF conversion</h3>
+            <p className="text-gray-600 mb-4 text-sm sm:text-base px-2">Upload MP4 to start MP4 to GIF process</p>
             <input
               ref={fileInputRef}
               type="file"
@@ -179,36 +179,36 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
                 e.stopPropagation(); // Prevent double trigger
                 fileInputRef.current?.click();
               }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 rounded-full text-sm sm:text-base font-medium"
             >
               Choose MP4 File for MP4 to GIF
             </Button>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-xs sm:text-sm text-gray-500 mt-3 px-2 leading-relaxed">
               Max file size: 100MB | MP4 to GIF converter supports: MP4, MOV, AVI, WebM
             </p>
           </div>
         ) : (
           <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <FileVideo className="w-8 h-8 text-blue-600" />
-                <div>
-                  <p className="font-semibold">{selectedFile.name}</p>
-                  <p className="text-sm text-gray-600">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB</p>
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                <FileVideo className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 flex-shrink-0" />
+                <div className="min-w-0 flex-1">
+                  <p className="font-semibold text-sm sm:text-base truncate">{selectedFile.name}</p>
+                  <p className="text-xs sm:text-sm text-gray-600">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB</p>
                 </div>
               </div>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={reset}
-                className="text-gray-400 hover:text-gray-600"
+                className="text-gray-400 hover:text-gray-600 flex-shrink-0 p-2"
               >
                 <X className="w-4 h-4" />
               </Button>
             </div>
 
             {/* Settings */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div>
                 <label className="text-sm font-medium text-gray-700">Duration (seconds)</label>
                 <input
@@ -217,7 +217,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
                   max="10"
                   value={duration}
                   onChange={(e) => setDuration(Number(e.target.value))}
-                  className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-base"
                 />
               </div>
               
@@ -226,7 +226,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
                 <select
                   value={quality}
                   onChange={(e) => setQuality(Number(e.target.value))}
-                  className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-base"
                 >
                   <option value="5">Low</option>
                   <option value="10">Medium</option>
@@ -234,12 +234,12 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
                 </select>
               </div>
               
-              <div>
+              <div className="sm:col-span-2 lg:col-span-1">
                 <label className="text-sm font-medium text-gray-700">Frame Rate (FPS)</label>
                 <select
                   value={fps}
                   onChange={(e) => setFps(Number(e.target.value))}
-                  className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-base"
                 >
                   <option value="5">5 FPS</option>
                   <option value="10">10 FPS</option>
@@ -256,33 +256,36 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
             )}
 
             {isConverting ? (
-              <div className="text-center py-8">
-                <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
-                <p className="text-lg font-semibold mb-2">MP4 to GIF conversion in progress...</p>
-                <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+              <div className="text-center py-6 sm:py-8 px-4">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
+                <p className="text-base sm:text-lg font-semibold mb-3">MP4 to GIF conversion in progress...</p>
+                <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3 mb-2 mx-auto max-w-sm">
                   <div 
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full transition-all duration-300"
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 sm:h-3 rounded-full transition-all duration-300"
                     style={{ width: `${progress}%` }}
                   ></div>
                 </div>
-                <p className="text-sm text-gray-600">{Math.round(progress)}% complete</p>
+                <p className="text-sm sm:text-base text-gray-600 font-medium">{Math.round(progress)}% complete</p>
               </div>
             ) : convertedGif ? (
               <div className="space-y-4">
                 <div className="text-center">
-                  <Image 
-                    src={convertedGif} 
-                    alt="Converted GIF" 
-                    width={480}
-                    height={270}
-                    className="max-w-full h-auto rounded-lg mx-auto border border-gray-200"
-                    unoptimized
-                  />
+                  <div className="relative inline-block max-w-full">
+                    <Image 
+                      src={convertedGif} 
+                      alt="Converted GIF" 
+                      width={480}
+                      height={270}
+                      className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto rounded-lg border border-gray-200 shadow-sm"
+                      style={{ maxHeight: '400px', objectFit: 'contain' }}
+                      unoptimized
+                    />
+                  </div>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-2">
                   <Button 
                     onClick={handleDownload}
-                    className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 text-white"
+                    className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 text-base font-medium"
                   >
                     <Download className="w-4 h-4 mr-2" />
                     Download Animation
@@ -290,6 +293,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
                   <Button 
                     onClick={reset}
                     variant="outline"
+                    className="flex-1 sm:flex-none sm:px-6 py-3 text-base font-medium"
                   >
                     Convert Another
                   </Button>
@@ -298,9 +302,9 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
             ) : (
               <Button
                 onClick={convertToGif}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 sm:py-4 text-base sm:text-lg font-medium"
               >
-                <Play className="w-5 h-5 mr-2" />
+                <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Start MP4 to GIF Conversion
               </Button>
             )}

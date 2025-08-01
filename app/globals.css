@@ -360,3 +360,59 @@ h3 {
     padding: 0 3rem;
   }
 }
+
+/* Mobile-first image optimization */
+@media (max-width: 640px) {
+  .gif-preview-container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .gif-preview-image {
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 300px !important;
+  }
+  
+  .mobile-button-stack {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .mobile-button-stack button {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+  }
+  
+  /* Optimize form inputs for mobile */
+  .mobile-form-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 0.75rem;
+  }
+  
+  /* Better touch targets */
+  .mobile-touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .gif-preview-image {
+    max-width: 80% !important;
+    max-height: 400px !important;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  * {
+    max-width: 100%;
+  }
+}
