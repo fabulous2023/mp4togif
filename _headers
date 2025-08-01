@@ -4,10 +4,18 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  X-DNS-Prefetch-Control: on
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cache-Control: public, max-age=31536000, immutable
+
+# GIF Worker 特殊缓存设置
+/gif.worker.js
+  Cache-Control: public, max-age=31536000, immutable
 
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
 
 /api/*
   Cache-Control: no-cache, no-store, must-revalidate
+
