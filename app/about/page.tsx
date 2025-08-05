@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import Link from 'next/link';
 import {
   Users,
@@ -30,7 +28,6 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      <Header showFullNavigation={true} />
 
       {/* Page Header */}
       <section className="py-12 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
@@ -304,8 +301,6 @@ export default function AboutPage() {
 
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

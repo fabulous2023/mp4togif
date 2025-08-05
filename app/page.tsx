@@ -53,7 +53,7 @@ export default function HomePage() {
       </section>
 
       {/* How to Convert MP4 to GIF Section */}
-      <section className="py-16 bg-white">
+      <section id="how-to-use" className="py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
@@ -93,7 +93,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50">
+      <section id="features" className="py-16 bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
@@ -141,7 +141,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose MP4 to GIF Section */}
-      <section className="py-16 bg-white">
+      <section id="why-choose" className="py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
@@ -213,7 +213,7 @@ export default function HomePage() {
       </section>
 
       {/* Who Needs MP4 to GIF Section */}
-      <section className="py-16 bg-gray-50">
+      <section id="who-needs" className="py-16 bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
@@ -277,7 +277,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white">
+      <section id="faq" className="py-16 bg-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">

@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { FileText, Shield } from 'lucide-react';
 import Link from 'next/link';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | MP4 to GIF - Free Video to GIF Converter',
@@ -17,7 +15,6 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <div className="min-h-screen">
-      <Header showFullNavigation={true} />
 
       {/* Page Header */}
       <section className="py-12 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
@@ -244,8 +241,6 @@ export default function TermsPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

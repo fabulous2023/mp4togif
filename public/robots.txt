@@ -1,5 +1,5 @@
 # robots.txt for MP4 to GIF Converter
-# Updated: 2025-07-23
+# Updated: 2025-08-05
 
 User-agent: *
 Allow: /
@@ -20,6 +20,12 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
 # Block access to API endpoints for indexing
 Disallow: /api/
 
@@ -35,9 +41,17 @@ Disallow: /_next/
 Disallow: /next/
 Disallow: /static/
 
-# Allow sitemap indexing
+# Block access to build and development files
+Disallow: /.next/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env*
+
+# Allow important files for SEO
 Allow: /sitemap.xml
 Allow: /robots.txt
+Allow: /favicon.ico
+Allow: /manifest.json
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

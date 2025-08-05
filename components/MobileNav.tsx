@@ -137,245 +137,423 @@ export function MobileNav({ siteName, showFullNavigation = false }: MobileNavPro
           overflowY: 'auto',
           paddingTop: '8px'
         }}>
-          <div 
-            onClick={closeMenu}
-            style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '16px 24px',
-              borderBottom: '1px solid #e5e7eb',
-              cursor: 'pointer',
-              backgroundColor: '#ffffff',
-              minHeight: '60px'
-            }}
-          >
-            <a 
-              href="#converter" 
-              style={{
-                color: '#1f2937',
-                fontSize: '18px',
-                fontWeight: '500',
-                textDecoration: 'none'
-              }}
-            >
-              CONVERTER
-            </a>
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              style={{ color: '#9ca3af' }}
-            >
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </div>
+          {showFullNavigation ? (
+            // 首页完整导航 - 与web端Header保持一致
+            <>
+              <div 
+                onClick={closeMenu}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 24px',
+                  borderBottom: '1px solid #e5e7eb',
+                  cursor: 'pointer',
+                  backgroundColor: '#ffffff',
+                  minHeight: '60px'
+                }}
+              >
+                <a 
+                  href="/#converter" 
+                  style={{
+                    color: '#1f2937',
+                    fontSize: '18px',
+                    fontWeight: '500',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Convert Now
+                </a>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ color: '#9ca3af' }}
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
 
-          <div 
-            onClick={closeMenu}
-            style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '16px 24px',
-              borderBottom: '1px solid #e5e7eb',
-              cursor: 'pointer',
-              backgroundColor: '#ffffff',
-              minHeight: '60px'
-            }}
-          >
-            <a 
-              href="/video-to-gif" 
-              style={{
-                color: '#1f2937',
-                fontSize: '18px',
-                fontWeight: '500',
-                textDecoration: 'none'
-              }}
-            >
-              VIDEO TO GIF
-            </a>
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              style={{ color: '#9ca3af' }}
-            >
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </div>
+              <div 
+                onClick={closeMenu}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 24px',
+                  borderBottom: '1px solid #e5e7eb',
+                  cursor: 'pointer',
+                  backgroundColor: '#ffffff',
+                  minHeight: '60px'
+                }}
+              >
+                <a 
+                  href="/#features" 
+                  style={{
+                    color: '#1f2937',
+                    fontSize: '18px',
+                    fontWeight: '500',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Features
+                </a>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ color: '#9ca3af' }}
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
 
-          <div 
-            onClick={closeMenu}
-            style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '16px 24px',
-              borderBottom: '1px solid #e5e7eb',
-              cursor: 'pointer',
-              backgroundColor: '#ffffff',
-              minHeight: '60px'
-            }}
-          >
-            <a 
-              href="#features" 
-              style={{
-                color: '#1f2937',
-                fontSize: '18px',
-                fontWeight: '500',
-                textDecoration: 'none'
-              }}
-            >
-              FEATURES
-            </a>
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              style={{ color: '#9ca3af' }}
-            >
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </div>
+              <div 
+                onClick={closeMenu}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 24px',
+                  borderBottom: '1px solid #e5e7eb',
+                  cursor: 'pointer',
+                  backgroundColor: '#ffffff',
+                  minHeight: '60px'
+                }}
+              >
+                <a 
+                  href="/#why-choose" 
+                  style={{
+                    color: '#1f2937',
+                    fontSize: '18px',
+                    fontWeight: '500',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Why Choose Us
+                </a>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ color: '#9ca3af' }}
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
 
-          <div 
-            onClick={closeMenu}
-            style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '16px 24px',
-              borderBottom: '1px solid #e5e7eb',
-              cursor: 'pointer',
-              backgroundColor: '#ffffff',
-              minHeight: '60px'
-            }}
-          >
-            <a 
-              href="#how-to-use" 
-              style={{
-                color: '#1f2937',
-                fontSize: '18px',
-                fontWeight: '500',
-                textDecoration: 'none'
-              }}
-            >
-              HOW TO USE
-            </a>
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              style={{ color: '#9ca3af' }}
-            >
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </div>
+              <div 
+                onClick={closeMenu}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 24px',
+                  borderBottom: '1px solid #e5e7eb',
+                  cursor: 'pointer',
+                  backgroundColor: '#ffffff',
+                  minHeight: '60px'
+                }}
+              >
+                <a 
+                  href="/#who-needs" 
+                  style={{
+                    color: '#1f2937',
+                    fontSize: '18px',
+                    fontWeight: '500',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Who Needs It
+                </a>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ color: '#9ca3af' }}
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
 
-          <div 
-            onClick={closeMenu}
-            style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '16px 24px',
-              borderBottom: '1px solid #e5e7eb',
-              cursor: 'pointer',
-              backgroundColor: '#ffffff',
-              minHeight: '60px'
-            }}
-          >
-            <a 
-              href="#faq" 
-              style={{
-                color: '#1f2937',
-                fontSize: '18px',
-                fontWeight: '500',
-                textDecoration: 'none'
-              }}
-            >
-              FAQ
-            </a>
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              style={{ color: '#9ca3af' }}
-            >
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </div>
+              <div 
+                onClick={closeMenu}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 24px',
+                  borderBottom: '1px solid #e5e7eb',
+                  cursor: 'pointer',
+                  backgroundColor: '#ffffff',
+                  minHeight: '60px'
+                }}
+              >
+                <a 
+                  href="/#faq" 
+                  style={{
+                    color: '#1f2937',
+                    fontSize: '18px',
+                    fontWeight: '500',
+                    textDecoration: 'none'
+                  }}
+                >
+                  FAQ
+                </a>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ color: '#9ca3af' }}
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
 
-          <div 
-            onClick={closeMenu}
-            style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '16px 24px',
-              borderBottom: '1px solid #e5e7eb',
-              cursor: 'pointer',
-              backgroundColor: '#ffffff',
-              minHeight: '60px'
-            }}
-          >
-            <a 
-              href="/about" 
-              style={{
-                color: '#1f2937',
-                fontSize: '18px',
-                fontWeight: '500',
-                textDecoration: 'none'
-              }}
-            >
-              ABOUT
-            </a>
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              style={{ color: '#9ca3af' }}
-            >
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </div>
+              <a 
+                href="/about" 
+                onClick={closeMenu}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 24px',
+                  borderBottom: '1px solid #e5e7eb',
+                  cursor: 'pointer',
+                  backgroundColor: '#ffffff',
+                  minHeight: '60px',
+                  color: '#1f2937',
+                  fontSize: '18px',
+                  fontWeight: '500',
+                  textDecoration: 'none'
+                }}
+              >
+                <span>About</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ color: '#9ca3af' }}
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+            </>
+          ) : (
+            // 其他页面简化导航 - 与web端Header保持一致
+            <>
+              <a 
+                href="/" 
+                onClick={closeMenu}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 24px',
+                  borderBottom: '1px solid #e5e7eb',
+                  cursor: 'pointer',
+                  backgroundColor: '#ffffff',
+                  minHeight: '60px',
+                  color: '#1f2937',
+                  fontSize: '18px',
+                  fontWeight: '500',
+                  textDecoration: 'none'
+                }}
+              >
+                <span>Home</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ color: '#9ca3af' }}
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+
+              <a 
+                href="/video-to-gif" 
+                onClick={closeMenu}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 24px',
+                  borderBottom: '1px solid #e5e7eb',
+                  cursor: 'pointer',
+                  backgroundColor: '#ffffff',
+                  minHeight: '60px',
+                  color: '#1f2937',
+                  fontSize: '18px',
+                  fontWeight: '500',
+                  textDecoration: 'none'
+                }}
+              >
+                <span>Video to GIF</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ color: '#9ca3af' }}
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+
+              <a 
+                href="/about" 
+                onClick={closeMenu}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 24px',
+                  borderBottom: '1px solid #e5e7eb',
+                  cursor: 'pointer',
+                  backgroundColor: '#ffffff',
+                  minHeight: '60px',
+                  color: '#1f2937',
+                  fontSize: '18px',
+                  fontWeight: '500',
+                  textDecoration: 'none'
+                }}
+              >
+                <span>About</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ color: '#9ca3af' }}
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+
+              <a 
+                href="/privacy" 
+                onClick={closeMenu}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 24px',
+                  borderBottom: '1px solid #e5e7eb',
+                  cursor: 'pointer',
+                  backgroundColor: '#ffffff',
+                  minHeight: '60px',
+                  color: '#1f2937',
+                  fontSize: '18px',
+                  fontWeight: '500',
+                  textDecoration: 'none'
+                }}
+              >
+                <span>Privacy</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ color: '#9ca3af' }}
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+
+              <a 
+                href="/terms" 
+                onClick={closeMenu}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '16px 24px',
+                  borderBottom: '1px solid #e5e7eb',
+                  cursor: 'pointer',
+                  backgroundColor: '#ffffff',
+                  minHeight: '60px',
+                  color: '#1f2937',
+                  fontSize: '18px',
+                  fontWeight: '500',
+                  textDecoration: 'none'
+                }}
+              >
+                <span>Terms</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  style={{ color: '#9ca3af' }}
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+            </>
+          )}
         </div>
 
         {/* 底部按钮 */}
@@ -387,50 +565,75 @@ export function MobileNav({ siteName, showFullNavigation = false }: MobileNavPro
             right: 0,
             padding: '16px',
             backgroundColor: '#ffffff',
-            height: '140px',
+            height: showFullNavigation ? '140px' : '80px',
             boxSizing: 'border-box',
             display: 'flex',
             flexDirection: 'column',
             gap: '12px'
           }}
         >
-          <a 
-            href="#converter"
-            onClick={closeMenu}
-            style={{
-              display: 'block',
-              width: '100%',
-              padding: '16px',
-              backgroundColor: '#2563eb',
-              color: 'white',
-              fontWeight: '600',
-              borderRadius: '8px',
-              textAlign: 'center',
-              textDecoration: 'none',
-              boxSizing: 'border-box'
-            }}
-          >
-            Try for free
-          </a>
-          <a 
-            href="#how-to-use"
-            onClick={closeMenu}
-            style={{
-              display: 'block',
-              width: '100%',
-              padding: '16px',
-              backgroundColor: '#f3f4f6',
-              color: '#374151',
-              fontWeight: '600',
-              borderRadius: '8px',
-              textAlign: 'center',
-              textDecoration: 'none',
-              border: '1px solid #e5e7eb',
-              boxSizing: 'border-box'
-            }}
-          >
-            How it works
-          </a>
+          {showFullNavigation ? (
+            // 首页显示转换相关按钮
+            <>
+              <a 
+                href="/#converter"
+                onClick={closeMenu}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  padding: '16px',
+                  backgroundColor: '#2563eb',
+                  color: 'white',
+                  fontWeight: '600',
+                  borderRadius: '8px',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  boxSizing: 'border-box'
+                }}
+              >
+                Try for free
+              </a>
+              <a 
+                href="/#how-to-use"
+                onClick={closeMenu}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  padding: '16px',
+                  backgroundColor: '#f3f4f6',
+                  color: '#374151',
+                  fontWeight: '600',
+                  borderRadius: '8px',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  border: '1px solid #e5e7eb',
+                  boxSizing: 'border-box'
+                }}
+              >
+                How it works
+              </a>
+            </>
+          ) : (
+            // 其他页面显示Try for free按钮
+            <a 
+              href="/#converter"
+              onClick={closeMenu}
+              style={{
+                display: 'block',
+                width: '100%',
+                padding: '16px',
+                backgroundColor: '#2563eb',
+                color: 'white',
+                fontWeight: '600',
+                borderRadius: '8px',
+                textAlign: 'center',
+                textDecoration: 'none',
+                boxSizing: 'border-box'
+              }}
+            >
+              Try for free
+            </a>
+          )}
         </div>
       </div>
     </>
