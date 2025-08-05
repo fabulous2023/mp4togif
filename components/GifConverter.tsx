@@ -56,9 +56,22 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
     loadFfmpeg();
   }, [loadFfmpeg]);
 
+  // Check if file is a supported video format
+  const isValidVideoFile = (file: File): boolean => {
+    // Check MIME type first
+    if (file.type.startsWith('video/')) {
+      return true;
+    }
+    
+    // If MIME type check fails, check file extension
+    const extension = file.name.split('.').pop()?.toLowerCase() || '';
+    const supportedExtensions = ['mp4', 'mov', 'avi', 'webm', '3gp', 'mkv', 'flv'];
+    return supportedExtensions.includes(extension);
+  };
+
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file && file.type.startsWith('video/')) {
+    if (file && isValidVideoFile(file)) {
       setSelectedFile(file);
       setConvertedGif(null);
       setError(null);
@@ -74,7 +87,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     const file = e.dataTransfer.files[0];
-    if (file && file.type.startsWith('video/')) {
+    if (file && isValidVideoFile(file)) {
       setSelectedFile(file);
       setConvertedGif(null);
       setError(null);
@@ -91,7 +104,9 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
     setProgress(0);
 
     try {
-      const inputFileName = 'input.mp4';
+      // 根据文件类型确定输入文件名
+      const fileExtension = selectedFile.name.split('.').pop()?.toLowerCase() || 'mp4';
+      const inputFileName = `input.${fileExtension}`;
       const outputFileName = 'output.gif';
       
       await ffmpeg.writeFile(inputFileName, await fetchFile(selectedFile));
@@ -117,7 +132,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
 
     } catch (err) {
       console.error(err);
-      setError(err instanceof Error ? err.message : 'Conversion failed');
+      setError(err instanceof Error ? err.message : 'Conversion failed, please try another video format');
     } finally {
       setIsConverting(false);
     }
@@ -165,27 +180,27 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Upload className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" />
             </div>
-            <h3 className="text-lg sm:text-xl font-semibold mb-2 px-2">Drop your MP4 file for MP4 to GIF conversion</h3>
-            <p className="text-gray-600 mb-4 text-sm sm:text-base px-2">Upload MP4 to start MP4 to GIF process</p>
+            <h3 className="text-lg sm:text-xl font-semibold mb-2 px-2">Drop your video file for Video to GIF conversion</h3>
+            <p className="text-gray-600 mb-4 text-sm sm:text-base px-2">Upload video to start Video to GIF process</p>
             <input
               ref={fileInputRef}
               type="file"
-              accept="video/*"
+              accept="video/*,.3gp,.mkv,.flv"
               onChange={handleFileSelect}
               className="hidden"
             />
-            <Button
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent double trigger
-                fileInputRef.current?.click();
-              }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 rounded-full text-sm sm:text-base font-medium"
-            >
-              Choose MP4 File for MP4 to GIF
-            </Button>
-            <p className="text-xs sm:text-sm text-gray-500 mt-3 px-2 leading-relaxed">
-              Max file size: 100MB | MP4 to GIF converter supports: MP4, MOV, AVI, WebM
-            </p>
+              <Button
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent double trigger
+                  fileInputRef.current?.click();
+                }}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 rounded-full text-sm sm:text-base font-medium"
+              >
+                Choose Video File for GIF
+              </Button>
+              <p className="text-xs sm:text-sm text-gray-500 mt-3 px-2 leading-relaxed">
+                Max file size: 100MB | Supported formats: MP4, MOV, AVI, WebM, 3GP, MKV, FLV
+              </p>
           </div>
         ) : (
           <div className="space-y-6">
@@ -258,7 +273,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
             {isConverting ? (
               <div className="text-center py-6 sm:py-8 px-4">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
-                <p className="text-base sm:text-lg font-semibold mb-3">MP4 to GIF conversion in progress...</p>
+                <p className="text-base sm:text-lg font-semibold mb-3">Video to GIF conversion in progress...</p>
                 <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3 mb-2 mx-auto max-w-sm">
                   <div 
                     className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 sm:h-3 rounded-full transition-all duration-300"
@@ -305,7 +320,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 sm:py-4 text-base sm:text-lg font-medium"
               >
                 <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Start MP4 to GIF Conversion
+                Start Video to GIF Conversion
               </Button>
             )}
           </div>
