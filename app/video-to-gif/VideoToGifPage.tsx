@@ -34,9 +34,24 @@ export default function VideoToGifPage() {
               The Easiest Way to Convert Video to GIF
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Transform any video format (MP4, MOV, AVI, WEBM) into high-quality animated GIFs instantly. 
+              Transform any video format into high-quality animated GIFs instantly. 
               Free online video to GIF converter with no software downloads required.
             </p>
+            
+            {/* Supported Formats */}
+            <div className="mb-8">
+              <p className="text-lg font-semibold text-gray-700 mb-4">Supported Video Formats:</p>
+              <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
+                {['MP4', '3GP', 'MKV', 'FLV', 'AVI', 'MOV', 'OGV', 'WEBM', 'WMV'].map((format) => (
+                  <span 
+                    key={format}
+                    className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm border border-gray-200"
+                  >
+                    {format}
+                  </span>
+                ))}
+              </div>
+            </div>
             
             {/* CTA Button */}
             <div className="mb-12">
@@ -214,7 +229,7 @@ export default function VideoToGifPage() {
                 <FileVideo className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Multiple Formats</h3>
-              <p className="text-sm text-gray-600">Support for MP4, MOV, AVI, WEBM, and all popular video formats</p>
+              <p className="text-sm text-gray-600">Support for MP4, 3GP, MKV, FLV, AVI, MOV, OGV, WEBM, WMV and all popular video formats</p>
             </div>
             
             <div className="bg-gray-50 p-6 rounded-xl flex flex-col items-center text-center">
@@ -458,8 +473,8 @@ export default function VideoToGifPage() {
                 <ChevronRight className="w-5 h-5 transition-transform group-open:rotate-90" />
               </summary>
               <p className="mt-3 text-gray-600">
-                Our video to GIF converter supports all popular video formats including MP4, MOV, AVI, WEBM, MKV, FLV, 
-                3GP, and more. The tool automatically detects and processes your video format for optimal GIF conversion.
+                Our video to GIF converter supports all popular video formats including MP4, 3GP, MKV, FLV, AVI, MOV, OGV, WEBM, WMV, 
+                and more. The tool automatically detects and processes your video format for optimal GIF conversion.
               </p>
             </details>
             

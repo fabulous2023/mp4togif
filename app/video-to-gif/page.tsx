@@ -3,7 +3,7 @@ import VideoToGifPage from './VideoToGifPage';
 
 export const metadata: Metadata = {
   title: 'Video to GIF Converter - Create Animated GIFs from Any Video Online | mp4togif.pro',
-  description: 'Easily convert any video format (MP4, MOV, AVI, WEBM, etc.) to a high-quality animated GIF. Free, online, and no software required.',
+  description: 'Easily convert any video format (MP4, 3GP, MKV, FLV, AVI, MOV, OGV, WEBM, WMV, etc.) to a high-quality animated GIF. Free, online, and no software required.',
   keywords: [
     'video to gif',
     'video to gif converter',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Video to GIF Converter - Create Animated GIFs from Any Video Online',
-    description: 'Easily convert any video format (MP4, MOV, AVI, WEBM, etc.) to a high-quality animated GIF. Free, online, and no software required.',
+    description: 'Easily convert any video format (MP4, 3GP, MKV, FLV, AVI, MOV, OGV, WEBM, WMV, etc.) to a high-quality animated GIF. Free, online, and no software required.',
     url: 'https://mp4togif.pro/video-to-gif',
     siteName: 'MP4 to GIF Converter',
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Video to GIF Converter - Create Animated GIFs from Any Video Online',
-    description: 'Easily convert any video format (MP4, MOV, AVI, WEBM, etc.) to a high-quality animated GIF. Free, online, and no software required.',
+    description: 'Easily convert any video format (MP4, 3GP, MKV, FLV, AVI, MOV, OGV, WEBM, WMV, etc.) to a high-quality animated GIF. Free, online, and no software required.',
     images: ['/web-app-manifest-512x512.png'],
   },
   alternates: {
