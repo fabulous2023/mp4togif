@@ -55,6 +55,9 @@ export function Header({ showFullNavigation = false }: HeaderProps) {
               <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Home
               </Link>
+              <Link href="/video-to-gif" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Video to GIF
+              </Link>
               <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
                 About
               </Link>

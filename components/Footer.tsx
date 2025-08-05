@@ -35,6 +35,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/video-to-gif" className="hover:text-white transition-colors">
+                  Video to GIF
+                </Link>
+              </li>
+              <li>
                 <Link href="/#features" className="hover:text-white transition-colors">
                   Features
                 </Link>
