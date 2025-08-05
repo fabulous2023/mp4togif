@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Video to GIF Converter - Create Animated GIFs from Any Video Online',
     description: 'Easily convert any video format (MP4, 3GP, MKV, FLV, AVI, MOV, OGV, WEBM, WMV, etc.) to a high-quality animated GIF. Free, online, and no software required.',
-    url: 'https://mp4togif.pro/video-to-gif',
+    url: 'https://mp4togif.pro/',
     siteName: 'MP4 to GIF Converter',
     images: [
       {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     images: ['/web-app-manifest-512x512.png'],
   },
   alternates: {
-    canonical: 'https://mp4togif.pro/video-to-gif',
+    canonical: 'https://mp4togif.pro/',
   },
 };
 

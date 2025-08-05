@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'MP4 to GIF Converter - Free Online Video to GIF Tool',
     description: 'Convert MP4 videos to high-quality animated GIFs instantly. Free online tool with no signup, no watermarks, and unlimited conversions. Perfect for social media, memes, and marketing.',
-    url: 'https://mp4togif.pro',
+    url: 'https://mp4togif.pro/',
     siteName: 'MP4 to GIF Converter',
     images: [
       {
@@ -138,7 +138,7 @@ export default function RootLayout({
     name: 'MP4 to GIF Converter',
     alternateName: ['MP4 to GIF', 'Video to GIF Converter', 'Free GIF Maker'],
     description: 'Free online MP4 to GIF converter. Convert videos to high-quality animated GIFs without signup or watermarks. Fast, secure, and unlimited MP4 to GIF conversion for social media, memes, and marketing.',
-    url: 'https://mp4togif.pro',
+    url: 'https://mp4togif.pro/',
     applicationCategory: 'MultimediaApplication',
     browserRequirements: 'Requires JavaScript enabled',
     keywords: [
@@ -181,13 +181,13 @@ export default function RootLayout({
       availability: 'https://schema.org/InStock',
       category: 'Free Software',
       description: 'Free unlimited MP4 to GIF conversion service',
-      url: 'https://mp4togif.pro',
+      url: 'https://mp4togif.pro/',
       validFrom: '2025-07-23'
     },
     provider: {
       '@type': 'Organization',
       name: 'MP4 to GIF Converter',
-      url: 'https://mp4togif.pro',
+      url: 'https://mp4togif.pro/',
       logo: {
         '@type': 'ImageObject',
         url: 'https://mp4togif.pro/icon1.png',
@@ -204,7 +204,7 @@ export default function RootLayout({
     creator: {
       '@type': 'Organization',
       name: 'MP4 to GIF Converter Team',
-      url: 'https://mp4togif.pro'
+      url: 'https://mp4togif.pro/'
     },
     datePublished: '2025-07-23',
     dateModified: '2025-07-23',
