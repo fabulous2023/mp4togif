@@ -274,10 +274,10 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
               <div className="text-center py-6 sm:py-8 px-4">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
                 <p className="text-base sm:text-lg font-semibold mb-3">Video to GIF conversion in progress...</p>
-                <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3 mb-2 mx-auto max-w-sm">
+                <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3 mb-2 mx-auto max-w-sm overflow-hidden">
                   <div 
                     className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 sm:h-3 rounded-full transition-all duration-300"
-                    style={{ width: `${progress}%` }}
+                    style={{ width: `${Math.min(progress, 100)}%` }}
                   ></div>
                 </div>
                 <p className="text-sm sm:text-base text-gray-600 font-medium">{Math.round(progress)}% complete</p>
