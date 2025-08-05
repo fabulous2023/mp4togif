@@ -125,7 +125,7 @@ export default function TermsPage() {
                     <p>Our service has the following limitations:</p>
                     <ul className="list-disc list-inside space-y-2 ml-4">
                       <li>Maximum file size: 100MB per upload</li>
-                      <li>Supported formats: MP4, MOV, AVI, WebM, and other common video formats</li>
+                      <li>Supported formats: MP4, 3GP, MKV, FLV, AVI, MOV, OGV, WEBM, WMV</li>
                       <li>Maximum duration: 60 seconds (longer videos may be truncated)</li>
                       <li>Output resolution: Up to 1080p depending on source quality</li>
                     </ul>

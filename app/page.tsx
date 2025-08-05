@@ -339,7 +339,7 @@ export default function HomePage() {
                 <ChevronRight className="w-5 h-5 transition-transform group-open:rotate-90" />
               </summary>
               <p className="mt-3 text-gray-600">
-                While optimized for MP4, we also support MOV, AVI, WebM, and most common video 
+                While optimized for MP4, we also support MP4, 3GP, MKV, FLV, AVI, MOV, OGV, WEBM, WMV 
                 formats. The tool automatically handles format conversion during processing.
               </p>
             </details>

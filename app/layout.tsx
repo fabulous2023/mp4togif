@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'MP4 to GIF Converter - Free Online Video to GIF Tool | 2025',
-    template: '%s | MP4 to GIF Converter',
+    default: 'MP4 to GIF Converter - Free Online Video to GIF Tool | 2025 | mp4togif.pro',
+    template: '%s | mp4togif.pro',
   },
   description: 'Convert MP4 to GIF instantly with our free online tool. Create high-quality animated GIFs from videos without signup or watermarks. Fast, secure MP4 to GIF conversion for social media, memes, and marketing.',
   keywords: [

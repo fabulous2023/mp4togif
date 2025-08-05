@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import VideoToGifPage from './VideoToGifPage';
 
 export const metadata: Metadata = {
-  title: 'Video to GIF Converter - Create Animated GIFs from Any Video Online | mp4togif.pro',
+  title: 'Video to GIF Converter - Create Animated GIFs from Any Video Online',
   description: 'Easily convert any video format (MP4, 3GP, MKV, FLV, AVI, MOV, OGV, WEBM, WMV, etc.) to a high-quality animated GIF. Free, online, and no software required.',
   keywords: [
     'video to gif',

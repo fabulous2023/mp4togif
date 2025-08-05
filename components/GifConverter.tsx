@@ -65,7 +65,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
     
     // If MIME type check fails, check file extension
     const extension = file.name.split('.').pop()?.toLowerCase() || '';
-    const supportedExtensions = ['mp4', 'mov', 'avi', 'webm', '3gp', 'mkv', 'flv'];
+    const supportedExtensions = ['mp4', '3gp', 'mkv', 'flv', 'avi', 'mov', 'ogv', 'webm', 'wmv'];
     return supportedExtensions.includes(extension);
   };
 
@@ -185,7 +185,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
             <input
               ref={fileInputRef}
               type="file"
-              accept="video/*,.3gp,.mkv,.flv"
+              accept="video/*,.mp4,.3gp,.mkv,.flv,.avi,.mov,.ogv,.webm,.wmv"
               onChange={handleFileSelect}
               className="hidden"
             />
@@ -199,7 +199,7 @@ export default function GifConverter({ onConversionComplete }: GifConverterProps
                 Choose Video File for GIF
               </Button>
               <p className="text-xs sm:text-sm text-gray-500 mt-3 px-2 leading-relaxed">
-                Max file size: 100MB | Supported formats: MP4, MOV, AVI, WebM, 3GP, MKV, FLV
+                Max file size: 100MB | Supported formats: MP4, 3GP, MKV, FLV, AVI, MOV, OGV, WEBM, WMV
               </p>
           </div>
         ) : (
