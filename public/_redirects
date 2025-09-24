@@ -1,0 +1,8 @@
+# Redirect www to non-www domain (SEO canonicalization)
+www.mp4togif.pro/* https://mp4togif.pro/:splat 301!
+
+# Redirect HTTP to HTTPS for non-www domain
+http://mp4togif.pro/* https://mp4togif.pro/:splat 301!
+
+# Redirect HTTP to HTTPS for www domain (which will then redirect to non-www)
+http://www.mp4togif.pro/* https://mp4togif.pro/:splat 301!

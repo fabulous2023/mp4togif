@@ -104,6 +104,7 @@ export const metadata: Metadata = {
       'notranslate': false,
     },
   },
+
   verification: {
     google: 'your-google-verification-code',
   },
